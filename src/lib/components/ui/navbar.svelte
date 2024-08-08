@@ -14,29 +14,26 @@
 <style>
 	.NavBar {
 		display: flex;
-		justify-content: center;
-		vertical-align: middle;
-		margin: auto;
-		width: 80%;
-		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
+		padding: 25px 20px 10px 20px;
 		color: #012d48;
-		font-size: 20px;
+	}
+
+	.NavBar img {
+		height: 25px;
+	}
+
+	.Links a {
 		font-weight: bold;
-		margin-top: 10px;
+		color: #012d48;
+		text-decoration: none;
+		margin-left: 20px;
 	}
-	.Links {
-		display: flex;
-		justify-content: flex-end;
-		gap: 20px;
-	}
+
 	.Links a:hover {
 		border-radius: 5px;
 		background: #f2e8cf;
 		padding: 0px 5px 0px 5px;
-	}
-
-	.NavBar img {
-		width: 25px;
-		height: 25px;
 	}
 </style>
