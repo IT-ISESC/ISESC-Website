@@ -1,22 +1,12 @@
 <script>
-	import Navbar from '$lib/components/ui/navbar/navbar.svelte';
+	import Navbar from '$lib/components/ui/navbar.svelte';
+	import ProfessorDirectory from '$lib/components/ui/directory/professorDirectory.svelte';
+	import StaffDirectory from '$lib/components/ui/directory/staffDirectory.svelte';
 </script>
 
 <Navbar />
-<!-- Todo remove <br />-->
-<br />
-<div id="professor">
-	<img alt="Stack of Paper" />
-	<h1>Professor Directory</h1>
-	<p>find your professor through our google sheet</p>
-	<a href="/directory">Click here to view</a>
-</div>
-<br />
-<div id="staff">
-	<h1>Staff Directory</h1>
-	<button>Find the staff according to your topic</button>
-	<img alt="Magnifying Glass" />
-</div>
+<ProfessorDirectory />
+<StaffDirectory />
 
 <hr />
 
@@ -26,3 +16,13 @@
 	<p>Info ...</p>
 	<p>Info ...</p>
 </div>
+
+<style>
+	hr {
+		height: 1px;
+		width: 85%;
+		border: none;
+		margin: 20px auto 20px auto;
+		background-color: #2b7292;
+	}
+</style>
