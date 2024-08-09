@@ -1,38 +1,18 @@
-# create-svelte
+# Starting
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
-
-## Creating a project
-
-If you're seeing this, you've probably already done this step. Congrats!
+To start working on this project, run the commands below in your terminal after you have cloned the repo to your local machine. Once done, use [localhost:5173](http://localhost:5173/) to run it on your machine.
 
 ```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+# Development
+## General development
+**Here are some pointers to get started developing:**
+1. Check the current work assigned in the `Issues tab`.
+2. The `Projects tab` shows the work progress as well as the roadmap for our work.
 
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Project Structure
+1. The `lib` folder is for your assets such as your images, components, css files, or script files.
+2. The `routes` folder is for your pages. To make a new page at `http://localhost:5173/new-page` you would make this: `routes/new-page/+page.svelte`.
