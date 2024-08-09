@@ -16,3 +16,5 @@ npm run dev
 ## Project Structure
 1. The `lib` folder is for your assets such as your images, components, css files, or script files.
 2. The `routes` folder is for your pages. To make a new page at `http://localhost:5173/new-page` you would make this: `routes/new-page/+page.svelte`.
+3. Create a new component in `lib/components/ui/componentName.svelte` and import it using `import componentName from '$lib/components/ui/componentName.svelte';`.
+4. Images should be stored in `lib/assets/pageName/image.svg`.
