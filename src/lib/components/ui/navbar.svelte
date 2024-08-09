@@ -8,6 +8,7 @@
 		<a href="/">Home</a>
 		<a href="/directory">Academic</a>
 		<a href="/news">News</a>
+		<a href="/fun">Fun</a>
 	</div>
 </div>
 
