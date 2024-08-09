@@ -1,10 +1,8 @@
 <script>
-	import Navbar from '$lib/components/ui/navbar.svelte';
 	import ProfessorDirectory from '$lib/components/ui/directory/professorDirectory.svelte';
 	import StaffDirectory from '$lib/components/ui/directory/staffDirectory.svelte';
 </script>
 
-<Navbar />
 <ProfessorDirectory />
 <StaffDirectory />
 
