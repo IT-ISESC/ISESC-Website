@@ -3,7 +3,9 @@
 </script>
 
 <div class="NavBar">
-	<img alt="ISESC Logo" src={ISESC_Logo} />
+	<a href="/">
+		<img alt="ISESC Logo" src={ISESC_Logo} />
+	</a>
 	<div class="Links">
 		<a href="/">Home</a>
 		<a href="/directory">Academic</a>
@@ -30,11 +32,12 @@
 		color: #012d48;
 		text-decoration: none;
 		margin-left: 20px;
+		transition: 0.5s;
 	}
 
 	.Links a:hover {
 		border-radius: 5px;
 		background: #f2e8cf;
-		padding: 0px 5px 0px 5px;
+		padding: 0px 2.5px 0px 2.5px;
 	}
 </style>
