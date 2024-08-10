@@ -19,7 +19,9 @@
 		gap: 20px;
 		position: relative;
 		right: 65px;
-		margin-bottom: 50px;
+		margin-bottom: 25px;
+		position: relative;
+		width: 320px;
 	}
 
 	#span_text {
@@ -30,9 +32,10 @@
 	#staff_dir {
 		height: auto;
 		position: absolute;
-		left: 200px;
+		left: 170px;
 		top: -25px;
 		z-index: -1;
+		overflow: hidden;
 	}
 
 	h1 {

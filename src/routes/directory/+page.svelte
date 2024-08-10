@@ -1,18 +1,17 @@
 <script>
 	import ProfessorDirectory from '$lib/components/ui/directory/professorDirectory.svelte';
+	import StaffCard from '$lib/components/ui/directory/staffCard.svelte';
 	import StaffDirectory from '$lib/components/ui/directory/staffDirectory.svelte';
 </script>
 
-<ProfessorDirectory />
-<StaffDirectory />
+<div id="directories">
+	<ProfessorDirectory />
+	<hr />
+	<StaffDirectory />
+</div>
 
-<hr />
-
-<div id="info">
-	<p>Info ...</p>
-	<p>Info ...</p>
-	<p>Info ...</p>
-	<p>Info ...</p>
+<div>
+	<StaffCard />
 </div>
 
 <style>
@@ -22,5 +21,12 @@
 		border: none;
 		margin: 20px auto 20px auto;
 		background-color: #2b7292;
+	}
+
+	#directories {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
 	}
 </style>

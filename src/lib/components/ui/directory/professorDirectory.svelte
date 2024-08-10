@@ -7,8 +7,10 @@
 	<span id="span_text">
 		<h1>Professor Directory</h1>
 		<p>Find your professors through our google sheet!</p>
-		<!-- Todo Put sheets link here-->
-		<a href="/directory">Click here to view</a>
+		<a
+			href="https://docs.google.com/spreadsheets/d/1nF9Eqpusd9Fl16sln1QYuV1WNxjPWDv3Pe1TwafwQWc/edit?gid=1164428359#gid=1164428359"
+			>Click here to view</a
+		>
 	</span>
 </div>
 
