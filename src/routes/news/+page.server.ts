@@ -4,6 +4,7 @@ export const load = async (): Promise<{ news: News[] }> => {
   // TODO: Get news from db
   const news: Array<News> = [
     {
+      id: 1,
       topic: 'Thailand New Gen Inventors Award 2025',
       tags: [ 
         {label: 'Innovation', props: { variant: 'innovation' }},
@@ -21,6 +22,7 @@ export const load = async (): Promise<{ news: News[] }> => {
 ผู้วิจัยสามารถเสนอผลงานเข้าร่วมประกวด ผ่านระบบข้อมูลสารสนเทศวิจัยและนวัตกรรมแห่งชาติ ที่เว็บไซต์ https://nriis.go.th`
     },
     {
+      id: 2,
       topic: 'BIMobject Green Design Competition 2024',
       tags: [ 
         {label: 'Innovation', props: { variant: 'innovation' }},
@@ -45,10 +47,12 @@ export const load = async (): Promise<{ news: News[] }> => {
 - ประกวดแบบรอบสุดท้าย เเละประกาศผู้ชนะเลิศ วันพฤหัสบดีที่ 7 พฤศจิกายน 2567`
     },
     {
+      id: 3,
       topic: 'SX2024 Hackathon',
       tags: [ 
         {label: 'Hackathon', props: { variant: 'hackathon' }},
         {label: 'Case', props: { variant: 'case' }},
+        {label: 'Competition', props: { variant: 'competition'}}
       ],
       dates: '28 Aug 2024',
       imgSrc: './src/lib/assets/news/mock_news.png',
@@ -76,6 +80,7 @@ The organizer will cover either accommodation or travel expenses to attend the f
 (2) Travel expenses: Your group will receive USD 120 per group for 3 days of travel expenses."`
     },
     {
+      id: 4,
       topic: 'CASE 101',
       tags: [ 
         {label: 'Case', props: { variant: 'case' }},

@@ -1,7 +1,7 @@
 import { type VariantProps, tv } from 'tailwind-variants'
 
 const tagVariants = tv({
-  base: "inline-flex items-center justify-center whitesapce-nowrap rounded-md text-xs font-medium",
+  base: "inline-flex items-center justify-center whitesapce-nowrap rounded-md text-xs font-medium gap-2",
   variants: {
     variant: {
       default: "bg-secondary-red text-white hover:bg-primary-red/90",
@@ -30,9 +30,12 @@ type Size = VariantProps<typeof tagVariants>["size"]
 type Props = {
   variant?: Variant;
   size?: Size;
+  closable?: boolean;
+  closeCallback?: (v: Variant) => void;
 }
 
 export {
   type Props as TagProps,
+  type Variant as TagVariant,
   tagVariants,
 }
