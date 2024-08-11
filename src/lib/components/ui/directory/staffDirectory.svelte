@@ -5,7 +5,7 @@
 <div id="staff">
 	<span id="span_text">
 		<h1>Staff Directory</h1>
-		<!-- Placeholder for a proper drop down menu and sorting system -->
+		<!-- TODO Placeholder for a proper drop down menu and sorting system -->
 		<p>Find the staff according to your topic!</p>
 	</span>
 	<img id="staff_dir" alt="Magnifying Glass" src={staff_dir} />

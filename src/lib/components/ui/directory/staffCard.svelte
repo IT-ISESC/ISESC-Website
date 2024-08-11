@@ -1,24 +1,28 @@
 <script>
 	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
+
+	export let nickname = 'Jane';
+	export let fullname = 'Jane Doe';
+	export let tag = 'Default Tag';
+	export let role = 'Default Role';
+	export let image = no_staff;
 </script>
 
-<div id="idk">
+<div class="relative">
 	<div id="wrapper">
 		<!-- svelte-ignore a11y_img_redundant_alt -->
-		<img alt="Staff Image" src={no_staff} />
-		<p id="nickname">P'Thames</p>
-		<p id="fullname">Chiratt Chirarattanachan</p>
-		<p id="tag">IT</p>
-		<p id="role">Secretary ISESC</p>
+		<img alt="Staff Image" src={image} />
+		<p id="nickname">P'{nickname}</p>
+		<p id="fullname">{fullname}</p>
+		<div class="mt-[-5px]">
+			<p id="tag">{tag}</p>
+		</div>
+		<p id="role">{role}</p>
 	</div>
 	<span id="shadowBox"> </span>
 </div>
 
 <style>
-	#idk {
-		position: relative;
-	}
-
 	#shadowBox {
 		width: 135px;
 		height: 200px;
@@ -27,7 +31,7 @@
 		box-shadow: 3px 4px 7.2px 0px rgba(0, 0, 0, 0.25);
 		position: absolute;
 		left: 15px;
-		top: 5px;
+		top: 15px;
 		z-index: -1;
 	}
 
@@ -45,7 +49,6 @@
 
 	img {
 		position: relative;
-		top: 10px;
 		width: 90px;
 		align-self: center;
 	}
@@ -54,22 +57,27 @@
 		font-size: 12px;
 	}
 	#fullname {
-		font-size: 10px;
+		font-size: 9px;
+		margin-top: -2.5px;
 	}
 
 	#tag {
+		display: inline-block;
+		bottom: 10px;
+
 		color: #f6f6f3;
 		font-weight: bold;
 		font-size: 10px;
+
 		border-radius: 50px;
 		background: #84140e;
-		padding: 2.5px 10px 5px 10px;
-		display: inline-block;
+		padding: 0px 5px 0px 5px;
 	}
 
 	#role {
 		color: #012d48;
 		font-size: 12px;
 		font-weight: bold;
+		margin-top: 0;
 	}
 </style>

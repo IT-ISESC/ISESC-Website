@@ -19,6 +19,8 @@
 		align-items: center;
 		padding: 25px 20px 10px 20px;
 		color: #012d48;
+		width: 600px;
+		margin: auto;
 	}
 
 	.NavBar img {
@@ -36,5 +38,12 @@
 		border-radius: 5px;
 		background: #f2e8cf;
 		padding: 0px 5px 0px 5px;
+	}
+
+	@media (max-width: 640px) {
+		.NavBar {
+			width: 100%;
+			margin: 0;
+		}
 	}
 </style>
