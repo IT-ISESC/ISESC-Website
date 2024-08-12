@@ -16,6 +16,7 @@
 
 	export let news: News;
 	const { topic, tags, dates, imgSrc, newsDescription } = news;
+	const dateDisplay = dates[0].display
 
 	export let className: string;
 </script>
@@ -36,7 +37,7 @@
 		<h1 class="text-xl font-bold text-white">{topic}</h1>
 	</div>
 	<div class="absolute bottom-2 left-6 flex flex-col gap-2">
-		<h3 class="whitespace-pre-line text-sm font-semibold text-white">{dates}</h3>
+		<h3 class="whitespace-pre-line text-sm font-semibold text-white">{dateDisplay}</h3>
 		<div class="bottom-4 left-6 flex flex-row gap-2">
 			{#each tags as tag}
 				<Tag {...tag.props}>

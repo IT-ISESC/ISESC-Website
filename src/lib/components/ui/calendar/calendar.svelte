@@ -1,52 +1,107 @@
 <script lang="ts">
 	import { Calendar } from 'bits-ui';
 	import Icon from '../icons/icon.svelte';
+	import moment from 'moment';
+	import { createCalendar } from '@melt-ui/svelte';
+	import { createDialog } from '@melt-ui/svelte'
+	import type { News } from '$lib/components/ui/news/newsCard/newsCard';
+	import CalendarModal from './calendarModal/calendarAccodion.svelte'
+
+	const {
+		elements: { heading, prevButton, nextButton },
+		states: { months, headingValue }
+	} = createCalendar();
+
+	const {
+		elements: {
+			trigger,
+			overlay,
+			content,
+			title,
+			description,
+			close,
+			portalled,
+		},
+		states: { open },
+	} = createDialog({
+		forceVisible: true,
+	})
 
 	const isDateUnavailable: Calendar.Props['isDateUnavailable'] = (date) => {
 		return false;
 	};
 
-  type EventDates = {
-    startDate: string
-    endDate?: string
-    specialDate?: string[]
-  }
+	export let news: News[];
 
-	export let eventDates: EventDates[] = [
-    {
-      startDate: '',
-      endDate: '',
-      specialDate: ['2024-08-28']
-    }
-  ]
+	export let colors: Array<string[]>
+
+	const positions = [
+		'bottom-[0.02rem]',
+		'bottom-[0.18rem]',
+		'bottom-[0.34rem]',
+		'bottom-[0.5rem]'
+	]
+
+	let eventsInDate: any = {}
+	let clickedDate: string
+
+	const addEventToDate = (eventId: number, date: string) => {
+		if (eventsInDate[date]) {
+			eventsInDate[date].push(eventId)
+		} else {
+			eventsInDate[date] = [eventId]
+		}
+		return ''
+	}
+
+	const intersect = (arr1: number[], arr2: number[]) => {
+		return arr1.filter((val1) => {
+			return arr2.indexOf(val1) !== -1
+		})
+	}
+
+	$: ids = eventsInDate[clickedDate] || []
+
+	$: filteredIds = news.map((Onew) => Onew.id)
+
+	const checkEvent = () => {
+		if (ids === undefined || ids.length === 0 || intersect(filteredIds, ids).length === 0) {
+			$open = false
+		}
+	}
 
 </script>
 
 <Calendar.Root
 	class="border-dark-10 bg-background-alt mt-6 rounded-[15px] border p-[22px] shadow-card"
-	let:months
-	let:weekdays
 	{isDateUnavailable}
+	let:weekdays
 	weekdayFormat="short"
 	fixedWeeks={true}
 >
 	<Calendar.Header class="flex items-center justify-between">
-		<Calendar.Heading class="text-xl font-bold" />
+		<div class="text-xl font-bold" {...$heading} use:heading>
+			{$headingValue}
+		</div>
 		<div class="flex items-center justify-end">
-			<Calendar.PrevButton
+			<div
 				class="rounded-9px bg-background-alt active:scale-98 inline-flex size-10 items-center justify-center font-bold hover:bg-muted active:transition-all"
+				{...$prevButton}
+				use:prevButton
 			>
 				<Icon name="chevronLeft" class="size-auto fill-current stroke-black stroke-0" />
-			</Calendar.PrevButton>
-			<Calendar.NextButton
+			</div>
+			<div
 				class="rounded-9px bg-background-alt active:scale-98 inline-flex size-10 items-center justify-center font-bold hover:bg-muted active:transition-all"
+				{...$nextButton}
+				use:nextButton
 			>
 				<Icon name="chevronRight" class="size-auto fill-current stroke-black stroke-0" />
-			</Calendar.NextButton>
+			</div>
 		</div>
 	</Calendar.Header>
 	<div class="flex flex-col space-y-4 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
-		{#each months as month, i (i)}
+		{#each $months as month, i (i)}
 			<Calendar.Grid class="w-full border-collapse select-none space-y-1">
 				<Calendar.GridHead>
 					<Calendar.GridRow class="mb-1 flex w-full justify-between">
@@ -59,33 +114,70 @@
 						{/each}
 					</Calendar.GridRow>
 				</Calendar.GridHead>
-				<Calendar.GridBody class="border-r-2 border-t-2 overflow-x-hidden ">
+				<Calendar.GridBody class="overflow-hidden border-r-2 border-t-2 ">
 					{#each month.weeks as weekDates}
-						<Calendar.GridRow class="flex w-full" >
-						{#each weekDates as date}
-								<Calendar.Cell
-									{date}
-									class="relative w-full !p-0 text-center text-sm"
+						<Calendar.GridRow class="flex w-full">
+							{#each weekDates as date}
+								<Calendar.Cell {date} class="overflow-visible relative w-full !p-0 text-center text-sm">
+								<!-- svelte-ignore a11y-click-events-have-key-events -->
+								<!-- svelte-ignore a11y-no-static-element-interactions -->
+								<div {...$trigger} use:trigger on:mouseenter={() => { 
+								clickedDate = date.toString()
+								}}
+								on:click={checkEvent}
 								>
 									<Calendar.Day
 										{date}
 										month={month.value}
-										class={`rounded-9px group relative inline-flex size-10 w-full items-center justify-center whitespace-nowrap bg-transparent p-0 text-sm font-normal text-foreground hover:border-foreground data-[disabled]:pointer-events-none data-[outside-month]:pointer-events-none data-[selected]:bg-[#45539D] data-[selected]:font-medium data-[disabled]:text-foreground/30 data-[selected]:text-background data-[unavailable]:text-muted-foreground data-[unavailable]:line-through overflow-visible border-l-2 border-b-2 `}>
-									{#if eventDates[0].specialDate?.includes(date.toString())}
-											<div
-												class="absolute top-[5px] size-1 rounded-full bg-foreground group-data-[today]:block group-data-[selected]:bg-background"
-											></div>
-										{/if}
+										class={`overflow-visible rounded-9px group relative inline-flex size-10 w-full items-center justify-center whitespace-nowrap border-b-2 border-l-2 bg-transparent p-0 text-sm font-normal ${moment(date.toString()).isBefore(moment(), 'day') ? 'text-black/30' : 'text-black'} data-[disabled]:pointer-events-none data-[outside-month]:pointer-events-none data-[disabled]:text-foreground/30 data-[unavailable]:text-muted-foreground data-[unavailable]:line-through `}
+									>
+										<div class=" dot-container  item-center absolute top-0.5 right-0.5 flex-col justify-center gap-0.5">
+											{#each news as Onew, i (Onew.id)}
+											{#each Onew.dates as eventDate}
+												{#if eventDate.specialDates?.includes(date.toString())}
+													{addEventToDate(Onew.id, date.toString())}
+													<div
+														class={`size-2 rounded-full ${moment(date.toString()).isBefore(moment(), 'day') ? colors[Onew.id - 1][1] : colors[Onew.id - 1][0]} group-data-[today]:block `}
+													></div>
+												{:else if (!eventDate.endDate || eventDate.startDate === eventDate.endDate) && date.toString() === eventDate.startDate}
+													{addEventToDate(Onew.id, date.toString())}
+													<div
+														class={`size-2 rounded-full ${moment(date.toString()).isBefore(moment(), 'day') ? colors[Onew.id - 1][1] : colors[Onew.id - 1][0]} group-data-[today]:block `}
+													></div>
+												{/if}
+												{/each}
+											{/each}
+										</div>
 										<div
-											class="absolute top-[5px] hidden size-1 rounded-full bg-foreground group-data-[today]:block group-data-[selected]:bg-background"
+											class="absolute top-[5px] hidden size-1 rounded-full bg-foreground group-data-[today]:block "
 										></div>
 										{date.day}
-										{#if true}
-										<div
-											class="absolute bottom-1 w-[calc(100%+5%)] h-0.5 bg-foreground group-data-[selected]:bg-background  "
-										></div>
-										{/if}
+										<div class="overflow-visible gap-0.5 w-[calc(100%+3px)] item-center absolute bottom-0.5 space-y-0.5 ">
+											{#each news as Onew (Onew.id)}
+												{#each Onew.dates as eventDate}
+												{#if eventDate.endDate && eventDate.endDate !== eventDate.startDate}
+													{#if moment(date.toString()).isBetween(moment(eventDate.startDate), moment(eventDate.endDate))}
+													{addEventToDate(Onew.id, date.toString())}
+														<div
+															class={`absolute ${positions[Onew.id - 1]} z-10 h-0.5 w-full ${moment(date.toString()).isBefore(moment(), 'day') ? colors[Onew.id - 1][1] : colors[Onew.id - 1][0]}`} 
+														></div>
+													{:else if date.toString() === eventDate.startDate}
+													{addEventToDate(Onew.id, date.toString())}
+														<div
+															class={`absolute right-0 ${positions[Onew.id - 1]} ml-2 z-10 h-0.5 w-4/5 rounded-full  ${moment(date.toString()).isBefore(moment(), 'day') ? colors[Onew.id - 1][1] : colors[Onew.id - 1][0]}`} 
+														></div>
+													{:else if date.toString() === eventDate.endDate}
+													{addEventToDate(Onew.id, date.toString())}
+														<div
+															class={`absolute left-0 ${positions[Onew.id - 1]} z-10 h-0.5 w-4/5 rounded-full  ${moment(date.toString()).isBefore(moment(), 'day') ? colors[Onew.id - 1][1] : colors[Onew.id - 1][0]}`} 
+														></div>
+													{/if}
+												{/if}
+												{/each}
+											{/each}
+										</div>
 									</Calendar.Day>
+								</div>
 								</Calendar.Cell>
 							{/each}
 						</Calendar.GridRow>
@@ -96,4 +188,13 @@
 	</div>
 </Calendar.Root>
 
+{#if $open}
+	<CalendarModal {news} bind:ids {overlay} modalContent={content} {title} {description} {close} {portalled}/>
+{/if}
 
+
+<style>
+	.dot-container div:not(:first-of-type) {
+		margin-top: -0.17rem;
+	}
+</style>
