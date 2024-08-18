@@ -34,7 +34,10 @@ type Props = {
   closeCallback?: (v: Variant) => void;
 }
 
+type TagLabel = 'Innovation' | 'Competition' | 'Case' | 'Hackathon'
+
 export {
+  type TagLabel,
   type Props as TagProps,
   type Variant as TagVariant,
   tagVariants,

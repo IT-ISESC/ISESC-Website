@@ -1,6 +1,6 @@
 <script lang="ts">
 	import NewsFeed from '$lib/components/ui/news/newsFeed.svelte';
-	import Calendar from '$lib/components/ui/calendar/calendar.svelte';
+	import EventOnCalendar from '$lib/components/ui/calendar/eventOnCalendar.svelte'
 	import Combobox from '$lib/components/ui/combobox/combobox.svelte';
 	import type { TagVariant } from '$lib/components/ui/tag/index.js';
 	import Tag from '$lib/components/ui/tag/tag.svelte';
@@ -65,5 +65,5 @@
 </div>
 <div class="container flex flex-col justify-between gap-2 py-12">
 	<h1 class="text-4xl font-bold text-primary-blue">Event Calendar</h1>
-	<Calendar news={$searchStore.filtered} {colors}/>
+	<EventOnCalendar news={$searchStore.filtered} {colors}/>
 </div>
