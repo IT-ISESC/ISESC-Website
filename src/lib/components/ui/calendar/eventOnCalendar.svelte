@@ -7,7 +7,6 @@
 	import type { News } from '$lib/components/ui/news/newsCard/newsCard';
 	import CalendarModal from './calendarModal/calendarAccodion.svelte';
 	import CalendarCell from './eventOnCalendarCell.svelte';
-	import { onMount } from 'svelte';
 
 	const {
 		elements: { heading, prevButton, nextButton },
@@ -26,10 +25,6 @@
 	};
 
 	export let news: News[];
-
-	export let colors: Array<string[]>;
-
-	const positions = ['bottom-[2%]', 'bottom-[9%]', 'bottom-[17%]', 'bottom-[25%]'];
 
 
 	let eventsInDate: any = {};
@@ -148,7 +143,6 @@
 		monthsWithEvent = [...monthsWithEventSet];
 	}
 
-	$: console.log(eventsDummyDate);
 </script>
 
 <Calendar.Root
@@ -182,9 +176,6 @@
 	<div class="flex w-full flex-col space-y-4 pt-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 		{#each $months as month, i (i)}
 			<div class="w-full border-collapse select-none space-y-1">
-				<!-- <Calendar.GridHead>
-					<Calendar.GridRow class="mb-1 flex w-full justify-between"></Calendar.GridRow>
-				</Calendar.GridHead> -->
 				<div class="border-r-2 border-t-2 border-gray-200">
 					{#if !monthsWithEvent.includes(month.value.month - 1)}
 						<div
@@ -213,9 +204,7 @@
 													{news}
 													type={'dummy'}
 													{date}
-													{month}
 													ids={[event]}
-													bind:eventsPeriods
 												/>
 											</div>
 										{/each}
@@ -237,9 +226,7 @@
 												{news}
 												type={'single'}
 												{date}
-												{month}
 												ids={eventsInDate[date.toString()]}
-												bind:eventsPeriods
 											/>
 										</div>
 									{/if}
@@ -261,8 +248,6 @@
 														{news}
 														type={'period'}
 														{date}
-														{month}
-														bind:eventsPeriods
 														{event}
 													/>
 												</div>

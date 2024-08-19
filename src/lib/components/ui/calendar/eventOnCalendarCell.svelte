@@ -1,16 +1,13 @@
 <script lang="ts">
-	import { Calendar } from 'bits-ui';
 	import type { News } from '../news/newsCard/newsCard';
 	import moment from 'moment';
 	import Icon from '../icons/icon.svelte';
 	import type { TagProps, TagLabel } from '$lib/components/ui/tag/index';
 
 	export let date;
-	export let month;
 	export let ids: number[] = [];
 	export let type: 'single' | 'period' | 'dummy' = 'single';
 	export let news: News[];
-	export let eventsPeriods;
 	export let event: {
 		eventId: number;
 		date: string;
@@ -93,8 +90,6 @@
 	</div>
 	{#if type === 'single'}
 		<div class="mt-1 flex flex-col gap-0 font-bold text-gray-400">
-			<!-- <h1 class="w-20 text-3xl">{day.date()}</h1>
-			<h3 class="text-sm">{day.format('MMM')}</h3> -->
 			<div class="w-10">
 				<h1 class="relative text-3xl">{day.date()}</h1>
 			</div>

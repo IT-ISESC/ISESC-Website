@@ -65,5 +65,5 @@
 </div>
 <div class="container flex flex-col justify-between gap-2 py-12">
 	<h1 class="text-4xl font-bold text-primary-blue">Event Calendar</h1>
-	<EventOnCalendar news={$searchStore.filtered} {colors}/>
+	<EventOnCalendar news={$searchStore.filtered} />
 </div>
