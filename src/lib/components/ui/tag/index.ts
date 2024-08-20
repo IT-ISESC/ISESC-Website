@@ -32,6 +32,7 @@ type Props = {
   size?: Size;
   closable?: boolean;
   closeCallback?: (v: Variant) => void;
+  class?: string
 }
 
 type TagLabel = 'Innovation' | 'Competition' | 'Case' | 'Hackathon'

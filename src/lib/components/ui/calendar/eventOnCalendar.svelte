@@ -25,6 +25,7 @@
 	};
 
 	export let news: News[];
+	export let colors
 
 
 	let eventsInDate: any = {};
@@ -87,16 +88,17 @@
 		});
 	};
 
-	$: singleDateIds = eventsInDate[clickedDate] || [];
-	$: ids = singleDateIds;
+	// $: singleDateIds = eventsInDate[clickedDate] || [];
+	// $: ids = singleDateIds;
+	let ids: number[] = []
 
 	$: filteredIds = news.map((Onew) => Onew.id);
 
-	const checkEvent = () => {
-		if (ids === undefined || ids.length === 0 || intersect(filteredIds, ids).length === 0) {
-			$open = false;
-		}
-	};
+	// const checkEvent = () => {
+	// 	if (ids === undefined || ids.length === 0 || intersect(filteredIds, ids).length === 0) {
+	// 		$open = false;
+	// 	}
+	// };
 
 	$: {
 		eventsInDate = {};
@@ -123,6 +125,8 @@
 		}
 	}
 
+	$: console.log(clickedDate)
+
 	let monthsWithEvent: number[];
 
 	$: {
@@ -142,6 +146,9 @@
 		]);
 		monthsWithEvent = [...monthsWithEventSet];
 	}
+
+	let i = 0
+
 
 </script>
 
@@ -188,7 +195,7 @@
 							<div class="flex w-full flex-col">
 								{#each weekDates as date}
 									{#if Object.keys(eventsDummyDate).includes(date.toString()) && moment(date.toString()).month() + 1 === month.value.month}
-										{#each eventsDummyDate[date.toString()] as event}
+										{#each eventsDummyDate[date.toString()] as event, i (i)}
 											<!-- Dummy events -->
 											<!-- svelte-ignore a11y-click-events-have-key-events -->
 											<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -198,6 +205,7 @@
 												class="h-full w-full border-b-2 border-l-2 border-gray-200"
 												on:click={() => {
 													ids = [event];
+													clickedDate = date.toString()
 												}}
 											>
 												<CalendarCell
@@ -205,6 +213,7 @@
 													type={'dummy'}
 													{date}
 													ids={[event]}
+													color={colors[(event - 1) % colors.length]}
 												/>
 											</div>
 										{/each}
@@ -217,16 +226,17 @@
 											{...$trigger}
 											use:trigger
 											class="h-full w-full border-b-2 border-l-2 border-gray-200"
-											on:mouseenter={() => {
-												clickedDate = date.toString();
+											on:click={() => {
+												ids = eventsInDate[date.toString()]
+												clickedDate = date.toString()
 											}}
-											on:click={checkEvent}
 										>
 											<CalendarCell
 												{news}
 												type={'single'}
 												{date}
 												ids={eventsInDate[date.toString()]}
+												color={colors[(eventsInDate[date.toString()][0] - 1) % colors.length]}
 											/>
 										</div>
 									{/if}
@@ -242,6 +252,7 @@
 													class="h-full w-full border-b-2 border-l-2 border-gray-200"
 													on:click={() => {
 														ids = [event.eventId];
+														clickedDate = date.toString()
 													}}
 												>
 													<CalendarCell
@@ -249,6 +260,7 @@
 														type={'period'}
 														{date}
 														{event}
+														color={colors[(event.eventId - 1) % colors.length]}
 													/>
 												</div>
 											{/if}
@@ -274,5 +286,6 @@
 		{description}
 		{close}
 		{portalled}
+		date={clickedDate}
 	/>
 {/if}

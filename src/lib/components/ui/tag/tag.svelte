@@ -4,14 +4,16 @@
 	import Icon from "../icons/icon.svelte";
 
 
+	let className: TagProps["class"] = undefined;
   export let variant: TagProps["variant"] = "default";
   export let size: TagProps["size"] = "default";
   export let closable: boolean = false
   export let closeCallback: (v: TagProps["variant"]) => void = (v: TagProps["variant"]) => {}
+  export { className as class }
 </script>
 
 
-<div class={cn(tagVariants({ variant, size }))}>
+<div class={cn(tagVariants({ variant, size, className }))}>
   <slot />
   {#if closable}
     <div on:click={() => closeCallback(variant)} {...$$restProps}>

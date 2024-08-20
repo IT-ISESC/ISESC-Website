@@ -1,4 +1,5 @@
 import type { EventDates } from "../../calendar"
+import type { IconName } from "../../icons"
 import type { TagProps, TagLabel } from "../../tag"
 
 export type News = {
@@ -8,4 +9,5 @@ export type News = {
   dates: EventDates[]
   imgSrc: string
   newsDescription: string
+  links?: Array<[string, string]>
 }

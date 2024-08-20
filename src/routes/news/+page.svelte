@@ -13,12 +13,11 @@
 	const { news } = data;
 
 	const colors = [
-		['bg-purple-500', 'bg-purple-300'],
-		['bg-blue-500', 'bg-blue-300'],
-		['bg-green-500', 'bg-green-300'],
-		['bg-yellow-500', 'bg-yellow-300'],
-		['bg-orange-500', 'bg-orange-300'],
-		['bg-red-500', 'bg-red-300'],
+		['bg-violet-500', 'bg-violet-800/40'],
+		['bg-sky-500', 'bg-sky-800/40'],
+		['bg-emerald-500', 'bg-emerald-800/40'],
+		['bg-amber-500', 'bg-amber-800/40'],
+		['bg-red-500', 'bg-red-800/40']
 	];
 
 	type NewsToBeSearched = News & { searchTerms: string[] };
@@ -65,5 +64,5 @@
 </div>
 <div class="container flex flex-col justify-between gap-2 py-12">
 	<h1 class="text-4xl font-bold text-primary-blue">Event Calendar</h1>
-	<EventOnCalendar news={$searchStore.filtered} />
+	<EventOnCalendar news={$searchStore.filtered} colors={colors.map((color) => color[1])}/>
 </div>
