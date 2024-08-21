@@ -43,6 +43,11 @@
 		z-index: 1000;
 	}
 
+	.dropdown a:hover {
+		background: #f2e8cf;
+		color: #012d48 !important;
+	}
+
 	.dropdown .content {
 		display: none;
 		position: absolute;
