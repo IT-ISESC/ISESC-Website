@@ -2,6 +2,7 @@
 	import '../app.css';
 	import Navbar from '$lib/components/ui/navbar.svelte';
 	export let title = 'ISESC';
+	// TODO Make ISESC.ico to use
 	let favicon = '/default-favicon.ico';
 </script>
 
