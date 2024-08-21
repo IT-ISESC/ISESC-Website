@@ -56,7 +56,8 @@
 		padding: 0.5rem;
 		color: #fcfcfc;
 		font-size: 12px;
-		--bg: var(--secondary);
+		/* TODO Check variable for colours again */
+		--bg: #2b7292;
 		background-color: var(--bg);
 		transition: background-color 0.5s;
 	}

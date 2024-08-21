@@ -6,7 +6,8 @@
 	<div class="col-left">
 		<h2>
 			<br />
-			<span style="color: var(--secondary);">ACADEMIC</span> <br />
+			<!-- TODO Check variable for colours again -->
+			<span style="color: #2B7292;">ACADEMIC</span> <br />
 			SYSTEM!
 		</h2>
 		<br />
@@ -64,7 +65,8 @@
 		padding: 0.5rem;
 		color: #fcfcfc;
 		font-size: 12px;
-		--bg: var(--secondary);
+		/* TODO Check variable for colours again */
+		--bg: #2b7292;
 		background-color: var(--bg);
 		transition: background-color 0.5s;
 	}
