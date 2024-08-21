@@ -16,12 +16,13 @@
 
 	export let news: News;
 	const { topic, tags, dates, imgSrc, newsDescription } = news;
+	const dateDisplay = dates[0].display
 
 	export let className: string;
 </script>
 
 <div
-	class={cn('relative w-full rounded-[15px] bg-secondary-blue pb-1 pr-1', className)}
+	class={cn('cursor-pointer relative w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1', className)}
 	{...$trigger}
 	use:trigger
 >
@@ -30,13 +31,13 @@
 		use:trigger
 		src={imgSrc}
 		alt="news"
-		class="left-0 top-0 w-full rounded-[15px] object-cover brightness-75"
+		class="left-0 top-0 w-full rounded-[0.9375rem] object-cover brightness-75"
 	/>
-	<div class="absolute left-6 top-2 flex flex-col gap-2 max-w-64">
+	<div class="absolute left-4 top-2 flex flex-col gap-2 max-w-64">
 		<h1 class="text-xl font-bold text-white">{topic}</h1>
 	</div>
-	<div class="absolute bottom-2 left-6 flex flex-col gap-2">
-		<h3 class="whitespace-pre-line text-sm font-semibold text-white">{dates}</h3>
+	<div class="absolute bottom-2 left-4 flex flex-col gap-2">
+		<h3 class="whitespace-pre-line text-sm font-semibold text-white">{dateDisplay}</h3>
 		<div class="bottom-4 left-6 flex flex-row gap-2">
 			{#each tags as tag}
 				<Tag {...tag.props}>
@@ -57,7 +58,7 @@
 		></div>
 		<div
 			class="fixed left-1/2 top-1/2 z-50 max-h-[85vh] w-[90vw]
-            max-w-[450px] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white
+            -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white
             p-4 shadow-lg"
 			transition:flyAndScale={{
 				duration: 150,

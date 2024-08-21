@@ -1,6 +1,6 @@
 <script lang="ts">
 	import NewsFeed from '$lib/components/ui/news/newsFeed.svelte';
-	import Calendar from '$lib/components/ui/calendar/calendar.svelte';
+	import EventOnCalendar from '$lib/components/ui/calendar/eventOnCalendar.svelte'
 	import Combobox from '$lib/components/ui/combobox/combobox.svelte';
 	import type { TagVariant } from '$lib/components/ui/tag/index.js';
 	import Tag from '$lib/components/ui/tag/tag.svelte';
@@ -11,6 +11,14 @@
 
 	export let data;
 	const { news } = data;
+
+	const colors = [
+		['bg-violet-500', 'bg-violet-800/40'],
+		['bg-sky-500', 'bg-sky-800/40'],
+		['bg-emerald-500', 'bg-emerald-800/40'],
+		['bg-amber-500', 'bg-amber-800/40'],
+		['bg-red-500', 'bg-red-800/40']
+	];
 
 	type NewsToBeSearched = News & { searchTerms: string[] };
 	const searchNews: NewsToBeSearched[] = news.map((Onew: News) => ({
@@ -47,7 +55,7 @@
 </div>
 <div>
 	{#if $searchStore.filtered.length}
-		<NewsFeed news={$searchStore.filtered} />
+		<NewsFeed news={$searchStore.filtered} {colors}/>
 	{:else}
     <div class="flex text-center align-middle justify-center items-center text-xl font-semibold text-secondary-lightBlue">
       No Results Found...
@@ -56,5 +64,5 @@
 </div>
 <div class="container flex flex-col justify-between gap-2 py-12">
 	<h1 class="text-4xl font-bold text-primary-blue">Event Calendar</h1>
-	<Calendar />
+	<EventOnCalendar news={$searchStore.filtered} colors={colors.map((color) => color[1])}/>
 </div>

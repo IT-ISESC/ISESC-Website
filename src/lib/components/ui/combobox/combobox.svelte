@@ -24,7 +24,7 @@
 </script>
  
 <Combobox.Root items={filteredTags} bind:inputValue bind:touchedInput multiple={true} bind:selected={selectedTags}>
-  <div class="flex bg-secondary-blue rounded-lg w-[45%] item-center justify-center gap-1 pl-3">
+  <div class="flex bg-secondary-blue rounded-lg w-[45%] item-center justify-center gap-1 pl-1">
     <Icon name="search" class="size-auto fill-white/40" />
     <Combobox.Input
       class="inline-flex h-input w-full truncate rounded-9px bg-transparent text-lg placeholder:text-lg placeholder:text-foreground-alt/50 placeholder:text-white/40 placeholder:font-semibold text-white/40 font-semibold focus-visible:outline-none focus:placeholder:text-transparent"
@@ -34,7 +34,7 @@
   </div>
  
   <Combobox.Content
-    class="w-full rounded-xl border border-muted bg-background px-1 py-3 shadow-popover outline-none"
+    class="!w-[40%] rounded-xl border border-muted bg-background px-1 py-3 shadow-popover outline-none"
     transition={flyAndScale}
     sideOffset={8}
   >
