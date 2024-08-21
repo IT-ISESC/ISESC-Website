@@ -6,13 +6,50 @@
 	<img alt="ISESC Logo" src={ISESC_Logo} />
 	<div class="Links">
 		<a href="/">Home</a>
-		<a href="/academic">Academic</a>
-		<a href="/directory">Directory</a>
+		<div class="dropdown">
+			<button>Academic</button>
+			<div class="content">
+				<a href="/academic">Academic System</a>
+				<a href="/scholarship">Scholarship</a>
+				<a href="/directory">Professor & Staff Directory</a>
+			</div>
+		</div>
 		<a href="/news">News</a>
 	</div>
 </div>
+<div style="height:50px"></div>
 
 <style>
+	.dropdown button {
+		cursor: pointer;
+	}
+
+	.dropdown button:hover {
+		border-radius: 5px;
+		background: #f2e8cf;
+		padding: 0px 5px 0px 5px;
+	}
+
+	.dropdown:hover .content {
+		display: block;
+	}
+
+	.dropdown a {
+		display: block;
+		margin-left: 0px !important;
+		padding-left: 10px;
+		background-color: #2b7292;
+		color: #ffffff !important;
+		z-index: 1000;
+	}
+
+	.dropdown .content {
+		display: none;
+		position: absolute;
+		width: 150px;
+		box-shadow: 2px 2px 5px #012d48;
+	}
+
 	.NavBar {
 		display: flex;
 		justify-content: space-between;
@@ -21,17 +58,30 @@
 		color: #012d48;
 		width: 600px;
 		margin: auto;
+		background-color: white;
+		z-index: 1000;
+		position: fixed;
 	}
 
 	.NavBar img {
 		height: 25px;
 	}
 
+	.Links {
+		display: flex;
+	}
+
+	.Links button {
+		font-weight: bold;
+		color: #012d48;
+		margin-left: 20px;
+	}
+
 	.Links a {
 		font-weight: bold;
 		color: #012d48;
 		text-decoration: none;
-		margin-left: 10px;
+		margin-left: 20px;
 	}
 
 	.Links a:hover {
