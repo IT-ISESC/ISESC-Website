@@ -5,7 +5,7 @@
 <div id="staff">
 	<span id="span_text">
 		<h1>Staff Directory</h1>
-		<!-- Placeholder for a proper drop down menu and sorting system -->
+		<!-- TODO Placeholder for a proper drop down menu and sorting system -->
 		<p>Find the staff according to your topic!</p>
 	</span>
 	<img id="staff_dir" alt="Magnifying Glass" src={staff_dir} />
@@ -19,7 +19,9 @@
 		gap: 20px;
 		position: relative;
 		right: 65px;
-		margin-bottom: 50px;
+		margin-bottom: 25px;
+		position: relative;
+		width: 320px;
 	}
 
 	#span_text {
@@ -30,9 +32,10 @@
 	#staff_dir {
 		height: auto;
 		position: absolute;
-		left: 200px;
+		left: 170px;
 		top: -25px;
 		z-index: -1;
+		overflow: hidden;
 	}
 
 	h1 {
