@@ -1,11 +1,13 @@
 <script>
 	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
 
-	export let nickname = 'Jane';
-	export let fullname = 'Jane Doe';
-	export let tag = 'Default Tag';
-	export let role = 'Default Role';
+	export let nickname = 'Missing';
+	export let fullname = 'Missing';
+	export let tag = 'Missing';
+	export let role = 'Missing';
 	export let image = no_staff;
+
+	export let tagColor = '#84140e';
 </script>
 
 <div class="relative">
@@ -15,7 +17,7 @@
 		<p id="nickname">P'{nickname}</p>
 		<p id="fullname">{fullname}</p>
 		<div class="mt-[-5px]">
-			<p id="tag">{tag}</p>
+			<p id="tag" style="--tag-background: {tagColor};">{tag}</p>
 		</div>
 		<p id="role">{role}</p>
 	</div>
@@ -70,14 +72,15 @@
 		font-size: 10px;
 
 		border-radius: 50px;
-		background: #84140e;
+		background: var(--tag-background);
 		padding: 0px 5px 0px 5px;
 	}
 
 	#role {
 		color: #012d48;
-		font-size: 12px;
+		font-size: 10px;
 		font-weight: bold;
 		margin-top: 0;
+		line-height: 12.5px;
 	}
 </style>
