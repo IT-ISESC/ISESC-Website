@@ -46,7 +46,7 @@
 	}
 
 	.event {
-		background-color: var(--secondary);
+		background-color: #2b7292;
 		border-radius: 24px;
 		min-width: 248px;
 		height: 140px;

@@ -43,7 +43,7 @@
 	}
 
 	section > .col-right > h2 {
-		color: var(--primary);
+		color: #012d48;
 		font-size: max(24px, 4vw);
 		font-weight: bold;
 		line-height: max(25px, 4vw);
@@ -56,7 +56,7 @@
 		padding: 0.5rem;
 		color: #fcfcfc;
 		font-size: 12px;
-		--bg: var(--secondary);
+		--bg: #2b7292;
 		background-color: var(--bg);
 		transition: background-color 0.5s;
 	}
