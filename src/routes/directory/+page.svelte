@@ -7,11 +7,13 @@
 
 <div class="flex flex-col items-center justify-center">
 	<ProfessorDirectory />
-	<hr class="screens-sm:w-[85%] bg-blue1 mx-auto my-[20px] h-px w-full max-w-[600px] border-none" />
+	<hr
+		class="screens-sm:w-[85%] mx-auto my-[20px] h-px w-full max-w-[600px] border-none bg-secondary-blue"
+	/>
 	<StaffDirectory />
 </div>
 
-<div class="screens-sm:w-[90%] mx-auto flex w-full max-w-[600px] flex-wrap justify-around">
+<div class="screens-sm:w-[90%] mx-auto flex w-full max-w-[1000px] flex-wrap justify-around">
 	<!-- Academic Affairs -->
 	<StaffCard
 		nickname="Sorn"
