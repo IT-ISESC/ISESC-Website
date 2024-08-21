@@ -7,12 +7,14 @@
 
 <div class="flex flex-col items-center justify-center">
 	<ProfessorDirectory />
-	<hr class="bg-blue1 screens-sm:w-[85%] mx-auto my-[20px] h-px w-[600px] border-none" />
+	<hr class="screens-sm:w-[85%] bg-blue1 mx-auto my-[20px] h-px w-full max-w-[600px] border-none" />
 	<StaffDirectory />
 </div>
 
-<div class="screens-sm:w-[90%] mx-auto flex w-[600px] flex-wrap gap-4">
+<div class="screens-sm:w-[90%] mx-auto flex w-full max-w-[600px] flex-wrap justify-around">
 	<!-- <StaffCard nickname="" fullname="" tag="Academic Affairs" role="" /> -->
+
+	<!-- Academic Affairs -->
 	<StaffCard
 		nickname="Sorn"
 		fullname="Suputtra Dachkun"
@@ -44,4 +46,12 @@
 		tag="Academic Affairs"
 		role="Academic Officer"
 	/>
+
+	<!-- Administrative Affairs -->
 </div>
+
+<style>
+	* {
+		overflow: hidden;
+	}
+</style>
