@@ -6,9 +6,9 @@
 	<img alt="ISESC Logo" src={ISESC_Logo} />
 	<div class="Links">
 		<a href="/">Home</a>
-		<a href="/directory">Academic</a>
+		<a href="/academic">Academic</a>
+		<a href="/directory">Directory</a>
 		<a href="/news">News</a>
-		<a href="/fun">Fun</a>
 	</div>
 </div>
 
@@ -31,7 +31,7 @@
 		font-weight: bold;
 		color: #012d48;
 		text-decoration: none;
-		margin-left: 20px;
+		margin-left: 10px;
 	}
 
 	.Links a:hover {
