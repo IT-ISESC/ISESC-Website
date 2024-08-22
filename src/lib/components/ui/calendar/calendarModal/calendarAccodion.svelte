@@ -72,13 +72,13 @@
 	<div
 		{...$overlay}
 		use:overlay
-		class="fixed inset-0 z-50 bg-black/50 p-2"
+		class="fixed inset-0 z-[1001] bg-black/50 p-2"
 		transition:fade={{ duration: 150 }}
 	>
 		<div
 			class={cn(
 				'mx-auto w-[18rem] max-w-full rounded-xl bg-white shadow-lg sm:w-[25rem]',
-				'fixed left-1/2 top-1/2 z-50 max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg'
+				'fixed left-1/2 top-1/2 z-[1001] max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg'
 			)}
 			{...$root}
 			{...$modalContent}

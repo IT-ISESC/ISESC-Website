@@ -150,18 +150,22 @@
 		<div class="ml-6 flex flex-col">
 			<div class="pb-4 pt-1">
 				<h1 class="text-lg font-bold text-gray-600">{dummyNews.topic}</h1>
+				{#if dummyNews.dates[dummyEventDateIndex].time}
 				<div class="flex flex-row items-center gap-1">
 					<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
 					<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-						{dummyNews.dates[dummyEventDateIndex].time || 'All Day'}
+						{dummyNews.dates[dummyEventDateIndex].time || '-'}
 					</p>
 				</div>
+				{/if}
+				{#if dummyNews.dates[dummyEventDateIndex].location}
 				<div class="flex flex-row items-center gap-1">
 					<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
 					<p class="text-sm font-semibold text-gray-500">
-						{dummyNews.dates[dummyEventDateIndex].location || 'TBA'}
+						{dummyNews.dates[dummyEventDateIndex].location || '-'}
 					</p>
 				</div>
+				{/if}
 				<div class="flex flex-row flex-wrap gap-2 pt-2">
 					{#each dummyNews.tags as tag}
 						<Tag {...tag.props} class="bg-opacity-50">
@@ -177,18 +181,22 @@
 				{#each newsInDate.slice(0, 2) as news, i (i)}
 					<div class="pb-4 pt-1">
 						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
+						{#if news.dates[eventDateIndex[i]].time}
 						<div class="flex flex-row items-center gap-1">
 							<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
 							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].time || 'All Day'}
+								{news.dates[eventDateIndex[i]].time || '-'}
 							</p>
 						</div>
+						{/if}
+						{#if news.dates[eventDateIndex[i]].location}
 						<div class="flex flex-row items-center gap-1">
 							<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
 							<p class="text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].location || 'TBA'}
+								{news.dates[eventDateIndex[i]].location || '-'}
 							</p>
 						</div>
+						{/if}
 						<div class="flex flex-row flex-wrap gap-2 pt-2">
 							{#each news.tags as tag}
 								<Tag {...tag.props} class="bg-opacity-50">
@@ -203,18 +211,22 @@
 				{#each newsInDate as news, i (i)}
 					<div class="pb-4 pt-1">
 						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
+						{#if news.dates[eventDateIndex[i]].time}
 						<div class="flex flex-row items-center gap-1">
 							<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
 							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].time || 'All Day'}
+								{news.dates[eventDateIndex[i]].time || '-'}
 							</p>
 						</div>
+						{/if}
+						{#if news.dates[eventDateIndex[i]].location}
 						<div class="flex flex-row items-center gap-1">
 							<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
 							<p class="text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].location || 'TBA'}
+								{news.dates[eventDateIndex[i]].location || '-'}
 							</p>
 						</div>
+						{/if}
 						<div class="flex flex-row flex-wrap gap-2 pt-2">
 							{#each news.tags as tag}
 								<Tag {...tag.props} class="bg-opacity-50">
