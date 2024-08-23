@@ -43,12 +43,12 @@
 </script>
 
 <div class="container flex flex-row justify-between gap-20 p-7 align-middle">
-	<h1 class="text-4xl font-bold text-primary-blue">News</h1>
+	<h1 class="text-3xl font-bold text-primary-blue">News</h1>
 	<Combobox bind:selectedTags />
 </div>
 <div class="container flex gap-2 pb-5 overflow-x-auto overscroll-contain">
 	{#each selectedTags as tag, i (i)}
-		<Tag variant={tag.value} size="sm" closable={true} {closeCallback}>
+		<Tag variant={tag.value} size="default" closable={true} {closeCallback}>
 			{tag.label} 
 		</Tag>
 	{/each}
@@ -63,6 +63,6 @@
 	{/if}
 </div>
 <div class="container flex flex-col justify-between gap-2 py-12">
-	<h1 class="text-4xl font-bold text-primary-blue">Event Calendar</h1>
+	<h1 class="text-3xl font-bold text-primary-blue">Event Calendar</h1>
 	<EventOnCalendar news={$searchStore.filtered} colors={colors.map((color) => color[1])}/>
 </div>

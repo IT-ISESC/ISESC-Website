@@ -53,11 +53,11 @@
 		<div
 			{...$overlay}
 			use:overlay
-			class="fixed inset-0 z-50 bg-black/50"
+			class="fixed inset-0 z-[1002] bg-black/50"
 			transition:fade={{ duration: 150 }}
 		></div>
 		<div
-			class="fixed left-1/2 top-1/2 z-50 max-h-[85vh] w-[90vw]
+			class="fixed left-1/2 top-1/2 z-[1002] max-h-[85vh] w-[90vw]
             -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white
             p-4 shadow-lg"
 			transition:flyAndScale={{
@@ -68,7 +68,7 @@
 			{...$content}
 			use:content
 		>
-			<NewsModal {news} {title} {description} {close}/>
+			<NewsModal {news} {title} {description} {content} {close} {portalled} {overlay}/>
 		</div>
 	</div>
 {/if}
