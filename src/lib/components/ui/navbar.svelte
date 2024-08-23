@@ -2,24 +2,35 @@
 	import ISESC_Logo from '$lib/assets/logo/logo.svg';
 </script>
 
-<div class="NavBar">
-	<img alt="ISESC Logo" src={ISESC_Logo} />
-	<div class="Links">
-		<a href="/">Home</a>
-		<div class="dropdown">
-			<button>Academic</button>
-			<div class="content">
-				<a href="/academic">Academic System</a>
-				<a href="/scholarship">Scholarship</a>
-				<a href="/directory">Professor & Staff Directory</a>
+<div class="NavBarContainer">
+	<div class="NavBar">
+		<img alt="ISESC Logo" src={ISESC_Logo} />
+		<div class="Links">
+			<a href="/">Home</a>
+			<div class="dropdown">
+				<button>Academic</button>
+				<div class="content">
+					<a href="/academic">Academic System</a>
+					<a href="/scholarship">Scholarship</a>
+					<a href="/directory">Professor & Staff Directory</a>
+				</div>
 			</div>
+			<a href="/news">News</a>
 		</div>
-		<a href="/news">News</a>
 	</div>
 </div>
-<div style="height:50px"></div>
+<div style="height:60px"></div>
 
 <style>
+	.NavBarContainer {
+		width: 100%;
+		height: 70px;
+		background-color: white;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+	}
+
 	.dropdown button {
 		cursor: pointer;
 	}
@@ -59,13 +70,17 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+
 		padding: 25px 20px 10px 20px;
 		color: #012d48;
-		width: 600px;
-		margin: auto;
+		width: 800px;
+
 		background-color: white;
 		z-index: 1000;
 		position: fixed;
+
+		left: 50%;
+		transform: translateX(-50%);
 	}
 
 	.NavBar img {
