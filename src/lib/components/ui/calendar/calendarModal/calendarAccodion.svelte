@@ -34,7 +34,6 @@
 	let filteredNews: News[] = [];
 	let eventDateIndex: number[];
 
-	// $: filteredNews = news.filter((Onew) => ids.includes(Onew.id));
 	$: if (ids) {
 		filteredNews = news.filter((Onew) => ids.includes(Onew.id))
 	}
@@ -52,7 +51,6 @@
 		});
 	}
 
-	$: console.log(eventDateIndex);
 
 	$: items = filteredNews.map((Onew, i) => ({
 		id: `item-${i + 1}`,

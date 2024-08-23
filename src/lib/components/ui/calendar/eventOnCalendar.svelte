@@ -88,17 +88,9 @@
 		});
 	};
 
-	// $: singleDateIds = eventsInDate[clickedDate] || [];
-	// $: ids = singleDateIds;
 	let ids: number[] = []
 
 	$: filteredIds = news.map((Onew) => Onew.id);
-
-	// const checkEvent = () => {
-	// 	if (ids === undefined || ids.length === 0 || intersect(filteredIds, ids).length === 0) {
-	// 		$open = false;
-	// 	}
-	// };
 
 	$: {
 		eventsInDate = {};
@@ -125,7 +117,6 @@
 		}
 	}
 
-	$: console.log(clickedDate)
 
 	let monthsWithEvent: number[];
 

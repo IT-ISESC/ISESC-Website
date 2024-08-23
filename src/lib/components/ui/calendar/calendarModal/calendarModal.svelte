@@ -34,12 +34,6 @@
     title: Onew.topic
   }))
 
-  // const triggers = [
-  //   { id: 'tab-1', title: 'Account' },
-  //   { id: 'tab-2', title: 'Password' },
-  //   { id: 'tab-3', title: 'Settings' },
-  // ];
-
   const [send, receive] = crossfade({
     duration: 250,
     easing: cubicInOut,
