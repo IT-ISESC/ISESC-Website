@@ -1,5 +1,5 @@
 <script>
-	import ISESC_Logo from '$lib/assets/logo.png';
+	import ISESC_Logo from '$lib/assets/logo/logo.svg';
 </script>
 
 <div class="NavBar">
