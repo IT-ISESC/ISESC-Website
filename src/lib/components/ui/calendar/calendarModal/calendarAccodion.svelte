@@ -7,6 +7,8 @@
 	import Icon from '../../icons/icon.svelte';
 	import type { IconName } from '../../icons';
 	import { onMount } from 'svelte';
+	import caretUp from '$lib/assets/icons/caretUp.svg'
+	import caretDown from '$lib/assets/icons/caretDown.svg'
 
 	export let portalled;
 	export let overlay;
@@ -47,7 +49,7 @@
 					return i;
 				}
 			}
-			return -1;
+			return 0;
 		});
 	}
 
@@ -58,8 +60,8 @@
 		dates: Onew.dates[0].display,
 		description: Onew.newsDescription,
 		links: Onew.links || [],
-		time: Onew.dates[eventDateIndex[0]].time,
-		location: Onew.dates[eventDateIndex[0]].location
+		time: Onew.dates[eventDateIndex[0]].time, 
+		location: Onew.dates[eventDateIndex[0]].location, 
 	}));
 
 	let className = '';
@@ -103,9 +105,11 @@
 						>
 							{title}
 							{#if $isSelected(id)}
-								<Icon name="caretUp" class="size-8 fill-none stroke-black stroke-2" />
+								<!-- <Icon name="caretUp" class="size-8 fill-none stroke-black stroke-2" /> -->
+								 <img class="size-6" id="caret-up" alt="caret-up" src={caretUp} />
 							{:else}
-								<Icon name="caretDown" class="size-8 fill-none stroke-black stroke-2" />
+								<!-- <Icon name="caretDown" class="size-8 fill-none stroke-black stroke-2" /> -->
+								 <img class="size-6" id="caret-down" alt="caret-down" src={caretDown} />
 							{/if}
 						</button>
 					</h2>
