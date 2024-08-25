@@ -3,16 +3,22 @@
 	import Icon from '../icons/icon.svelte';
 	import type { IconName } from '../icons/index';
 	import { onDestroy, onMount } from 'svelte';
+	import clock from '$lib/assets/icons/clock.svg'
+	import locationIcon from '$lib/assets/icons/location.svg'
+	import link from '$lib/assets/icons/link.svg'
+	import instagram from '$lib/assets/icons/instagram.svg'
+	import facebook from '$lib/assets/icons/facebook.svg'
+	import register from '$lib/assets/icons/register.svg'
 
 	export let title: string;
 	export let description: string;
 	const presetIcons: {
-		[key: string]: IconName;
+		[key: string]: any;
 	} = {
-		Instagram: 'instagram',
-		Facebook: 'facebook',
-		Register: 'register',
-		'More Information': 'link'
+		Instagram: instagram,
+		Facebook: facebook,
+		Register: register,
+		'More Information': link,
 	};
 	export let links: Array<[string, string]>;
 	$: iconNames = links.map((link) => presetIcons[link[0]] || 'link');
@@ -33,7 +39,8 @@
 				</h4>
 				{#if time}
 					<div class="flex flex-row gap-2 items-center justify-start align-center text-center">
-						<Icon name="clock" class="size-auto fill-none stroke-black stroke-2" />
+						<!-- <Icon name="clock" class="size-auto fill-none stroke-black stroke-2" /> -->
+						 <img class="size-auto" id="clock" alt="clock" src={clock} />
 						<h4
 							class="my-1 whitespace-break-spaces text-sm font-semibold leading-none tracking-[-0.01em] text-foreground"
 						>
@@ -43,7 +50,8 @@
 				{/if}
 				{#if location}
 					<div class="mb-2 flex flex-row gap-2 items-center justify-start align-center text-center">
-						<Icon name="location" class="size-auto fill-none stroke-black stroke-2" />
+						<!-- <Icon name="location" class="size-auto fill-none stroke-black stroke-2" /> -->
+						 <img class="size-auto" id="location" alt="location" src={locationIcon} />
 						<h4
 							class="my-1 whitespace-break-spaces text-sm font-semibold leading-none tracking-[-0.01em] text-foreground"
 						>
@@ -60,10 +68,11 @@
 							href={link[1]}
 							class="item-center flex flex-row justify-start gap-2 pt-4 text-center align-middle"
 						>
-							<Icon
+							<!-- <Icon
 								name={`${iconNames[i]}`}
 								class={`size-auto ${iconNames[i] === 'link' && 'fill-none stroke-black stroke-2'}`}
-							/>
+							/> -->
+							<img class="size-auto" alt="logo" src={iconNames[i]} />
 							{link[0]}
 						</a>
 					{/each}

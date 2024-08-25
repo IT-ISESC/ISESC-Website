@@ -7,6 +7,7 @@
   import { cubicInOut } from 'svelte/easing';
   import { crossfade } from 'svelte/transition';
   import type { News } from "../../news/newsCard/newsCard";
+  import close from '$lib/assets/icons/close.svg'
   
   export let portalled
   export let overlay

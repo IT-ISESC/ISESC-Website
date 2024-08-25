@@ -5,6 +5,7 @@
 	import type { IconName } from '../../icons';
 	import Button from '../../button/button.svelte';
 	import { goto } from '$app/navigation';
+	import closeIcon from '$lib/assets/icons/close.svg'
 
 	export let news: News;
 	export let portalled;
@@ -66,10 +67,11 @@
                 h-6 w-6 appearance-none items-center justify-center
                 rounded-full p-1"
 			>
-				<Icon
+				<!-- <Icon
 					name="close"
 					class="aria-hidden:true size-auto fill-none stroke-current stroke-2 text-black"
-				/>
+				/> -->
+				<img class="size-6" id="close" alt="close" src={closeIcon} />
 			</button>
 		</ScrollArea.Content>
 	</ScrollArea.Viewport>

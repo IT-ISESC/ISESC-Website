@@ -5,6 +5,8 @@
 	import type { TagProps, TagLabel } from '$lib/components/ui/tag/index';
 	import Tag from '$lib/components/ui/tag/tag.svelte';
 	import { onMount } from 'svelte';
+	import clock from '$lib/assets/icons/clock.svg'
+	import location from '$lib/assets/icons/location.svg'
 
 	export let date;
 	export let ids: number[] = [];
@@ -152,7 +154,8 @@
 				<h1 class="text-lg font-bold text-gray-600">{dummyNews.topic}</h1>
 				{#if dummyNews.dates[dummyEventDateIndex].time}
 				<div class="flex flex-row items-center gap-1">
-					<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
+					<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+					 <img class="size-6" id="clock" alt="clock" src={clock} />
 					<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
 						{dummyNews.dates[dummyEventDateIndex].time || '-'}
 					</p>
@@ -160,7 +163,8 @@
 				{/if}
 				{#if dummyNews.dates[dummyEventDateIndex].location}
 				<div class="flex flex-row items-center gap-1">
-					<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
+					<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+					 <img class="size-6" id="location" alt="location" src={location} />
 					<p class="text-sm font-semibold text-gray-500">
 						{dummyNews.dates[dummyEventDateIndex].location || '-'}
 					</p>
@@ -183,7 +187,8 @@
 						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
 						{#if news.dates[eventDateIndex[i]].time}
 						<div class="flex flex-row items-center gap-1">
-							<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
+							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+							 <img class="size-6" id="clock" alt="clock" src={clock} />
 							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
 								{news.dates[eventDateIndex[i]].time || '-'}
 							</p>
@@ -191,7 +196,8 @@
 						{/if}
 						{#if news.dates[eventDateIndex[i]].location}
 						<div class="flex flex-row items-center gap-1">
-							<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
+							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+							 <img class="size-6" id="location" alt="location" src={location} />
 							<p class="text-sm font-semibold text-gray-500">
 								{news.dates[eventDateIndex[i]].location || '-'}
 							</p>
@@ -213,7 +219,8 @@
 						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
 						{#if news.dates[eventDateIndex[i]].time}
 						<div class="flex flex-row items-center gap-1">
-							<Icon name="clock" class="fill-none stroke-gray-500 stroke-2" />
+							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+							 <img class="size-6" id="clock" alt="clock" src={clock} />
 							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
 								{news.dates[eventDateIndex[i]].time || '-'}
 							</p>
@@ -221,7 +228,8 @@
 						{/if}
 						{#if news.dates[eventDateIndex[i]].location}
 						<div class="flex flex-row items-center gap-1">
-							<Icon name="location" class="fill-none stroke-gray-500 stroke-2" />
+							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+							 <img class="size-6" id="location" alt="location" src={location} />
 							<p class="text-sm font-semibold text-gray-500">
 								{news.dates[eventDateIndex[i]].location || '-'}
 							</p>

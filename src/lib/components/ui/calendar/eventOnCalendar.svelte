@@ -7,6 +7,8 @@
 	import type { News } from '$lib/components/ui/news/newsCard/newsCard';
 	import CalendarModal from './calendarModal/calendarAccodion.svelte';
 	import CalendarCell from './eventOnCalendarCell.svelte';
+	import chevronLeft from '$lib/assets/icons/chevronLeft.svg'
+	import chevronRight from '$lib/assets/icons/chevronRight.svg'
 
 	const {
 		elements: { heading, prevButton, nextButton },
@@ -160,14 +162,16 @@
 				{...$prevButton}
 				use:prevButton
 			>
-				<Icon name="chevronLeft" class="size-auto fill-current stroke-black stroke-0" />
+				<!-- <Icon name="chevronLeft" class="size-auto fill-current stroke-black stroke-0" /> -->
+				<img class="size-6" id="chevron-left" alt="chevron-left" src={chevronLeft} />
 			</div>
 			<div
 				class="bg-background-alt active:scale-98 inline-flex size-10 items-center justify-center rounded-[0.5625rem] font-bold hover:bg-muted active:transition-all"
 				{...$nextButton}
 				use:nextButton
 			>
-				<Icon name="chevronRight" class="size-auto fill-current stroke-black stroke-0" />
+				<!-- <Icon name="chevronRight" class="size-auto fill-current stroke-black stroke-0" /> -->
+				 <img class="size-6" id="chevron-right" alt="chevron-right" src={chevronRight} />
 			</div>
 		</div>
 	</Calendar.Header>
