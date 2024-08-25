@@ -11,7 +11,7 @@ const tagVariants = tv({
       hackathon: "bg-violet-900 text-white hover:bg-violet-900/90",
     },
     size: {
-			default: "h-5 rounded-lg py-2 px-2",
+			default: "h-5 rounded-lg py-3 px-2",
 			sm: "h-9 rounded-xl px-3",
 			lg: "h-11 rounded-xl px-8",
 			icon: "h-10 w-10",

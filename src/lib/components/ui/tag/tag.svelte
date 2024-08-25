@@ -2,8 +2,7 @@
   import { type TagProps, tagVariants } from "./index";
   import { cn } from "$lib/utils";
 	import Icon from "../icons/icon.svelte";
-  import close from '$lib/assets/icons/close.svg'
-  import Close from '$lib/components/ui/icons/close.svelte'
+  import close from '$lib/assets/icons/closeWhite.svg'
 
 	let className: TagProps["class"] = undefined;
   export let variant: TagProps["variant"] = "default";
@@ -19,8 +18,7 @@
   {#if closable}
     <div on:click={() => closeCallback(variant)} {...$$restProps}>
       <!-- <Icon name="close" class="size-auto text-white aria-hidden:true fill-none stroke-current stroke-2"  /> -->
-       <!-- <img class="size-6 [&>*]:stroke-white" id="close" alt="close" src={close} /> -->
-        <Close class="size-auto stroke-white fill-current"/>
+       <img class="size-6 [&>*]:stroke-white" id="close" alt="close" src={close} />
     </div>
   {/if}
 </div>
