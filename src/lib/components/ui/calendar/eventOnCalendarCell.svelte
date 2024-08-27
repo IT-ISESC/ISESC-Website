@@ -93,7 +93,7 @@
 </script>
 
 <div
-	class="item-center flex h-full w-full justify-start gap-4 overflow-visible bg-gray-200/30 pr-2"
+	class="cursor-pointer item-center flex h-full w-full justify-start gap-4 overflow-visible bg-gray-200/30 pr-2"
 >
 	<div class="flex w-2 flex-col">
 		<!-- {#each correctTags as tag, i (i)}
@@ -103,7 +103,7 @@
 	</div>
 	<div class="grid w-full grid-cols-10 gap-0">
 		{#if type === 'single'}
-			<div class="col-span-2 mt-1 gap-0 font-bold text-gray-400">
+			<div class="col-span-2 mt-1 gap-0 font-bold text-gray-700">
 				<div class="w-full">
 					<h1 class="text-3xl">{day.date()}</h1>
 				</div>
@@ -112,7 +112,7 @@
 				</div>
 			</div>
 		{:else if type === 'period'}
-			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-400">
+			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-700">
 				<div>
 					<div class="w-full">
 						<h1 class="flex text-3xl">
@@ -131,7 +131,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-400">
+			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-700">
 				<div>
 					<div class="w-full">
 						<h1 class="flex text-3xl">
@@ -155,12 +155,12 @@
 		{#if type === 'dummy'}
 			<div class="col-span-7 col-start-4 ml-6 md:col-start-3">
 				<div class="pb-4 pt-1">
-					<h1 class="text-lg font-bold text-gray-600">{dummyNews.topic}</h1>
+					<h1 class="text-lg font-bold text-gray-700">{dummyNews.topic}</h1>
 					{#if dummyNews.dates[dummyEventDateIndex].time}
 						<div class="flex flex-row items-center gap-1">
 							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
 							<img class="size-6" id="clock" alt="clock" src={clock} />
-							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
+							<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
 								{dummyNews.dates[dummyEventDateIndex].time || '-'}
 							</p>
 						</div>
@@ -169,7 +169,7 @@
 						<div class="flex flex-row items-center gap-1">
 							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
 							<img class="size-6" id="location" alt="location" src={location} />
-							<p class="text-sm font-semibold text-gray-500">
+							<p class="text-sm font-semibold text-gray-700">
 								{dummyNews.dates[dummyEventDateIndex].location || '-'}
 							</p>
 						</div>
@@ -188,12 +188,12 @@
 				{#if newsInDate.length > 2}
 					{#each newsInDate.slice(0, 2) as news, i (i)}
 						<div class="pb-4 pt-1">
-							<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
+							<h1 class="text-lg font-bold text-gray-700">{news.topic}</h1>
 							{#if news.dates[eventDateIndex[i]].time}
 								<div class="flex flex-row items-center gap-1">
 									<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
 									<img class="size-6" id="clock" alt="clock" src={clock} />
-									<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
+									<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
 										{news.dates[eventDateIndex[i]].time || '-'}
 									</p>
 								</div>
@@ -202,7 +202,7 @@
 								<div class="flex flex-row items-center gap-1">
 									<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
 									<img class="size-6" id="location" alt="location" src={location} />
-									<p class="text-sm font-semibold text-gray-500">
+									<p class="text-sm font-semibold text-gray-700">
 										{news.dates[eventDateIndex[i]].location || '-'}
 									</p>
 								</div>
@@ -220,12 +220,12 @@
 				{:else}
 					{#each newsInDate as news, i (i)}
 						<div class="pb-4 pt-1">
-							<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
+							<h1 class="text-lg font-bold text-gray-700">{news.topic}</h1>
 							{#if news.dates[eventDateIndex[i]].time}
 								<div class="flex flex-row items-center gap-1">
 									<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
 									<img class="size-6" id="clock" alt="clock" src={clock} />
-									<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
+									<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
 										{news.dates[eventDateIndex[i]].time || '-'}
 									</p>
 								</div>
@@ -234,7 +234,7 @@
 								<div class="flex flex-row items-center gap-1">
 									<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
 									<img class="size-6" id="location" alt="location" src={location} />
-									<p class="text-sm font-semibold text-gray-500">
+									<p class="text-sm font-semibold text-gray-700">
 										{news.dates[eventDateIndex[i]].location || '-'}
 									</p>
 								</div>

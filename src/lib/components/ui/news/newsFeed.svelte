@@ -17,13 +17,13 @@
 			<h1 class="text-3xl font-bold text-primar-blue">News</h1>
 		</div> -->
 	{/if}
-	<div class="h-[50.625vw] md:h-[30.9375vw] lg:h-[19.6875vw]">
+	<div >
 		<div
 			class="minimal-scrollbar mx-auto grid h-full snap-x snap-mandatory scroll-px-8 auto-cols-[90%] grid-flow-col grid-rows-1 gap-6 overflow-x-auto px-8 md:w-10/12 md:auto-cols-[55%] lg:auto-cols-[35%]"
 		>
 			{#each news as Onew (Onew.id)}
 				<NewsCard
-					className={`snap-start ${colors.length && colors && colors[(Onew.id - 1) % colors.length][0]}`}
+					className={`aspect-video snap-start ${colors.length && colors && colors[(Onew.id - 1) % colors.length][0]}`}
 					news={Onew}
 				/>
 			{/each}

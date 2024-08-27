@@ -29,7 +29,7 @@
 >
 	{#if imgSrc === 'default'}
 		<div class="flex items-center justify-center align-middle h-full left-0 top-0 w-full rounded-[0.9375rem] object cover brightness-75 bg-primary-blue">
-			<img class="aspect-square w-3/12" id="white-logo" alt="white-logo" src={whiteLogo} />
+			<img class="aspect-square w-3/12 opacity-30" id="white-logo" alt="white-logo" src={whiteLogo} />
 		</div>
 	{:else}
 	<img
