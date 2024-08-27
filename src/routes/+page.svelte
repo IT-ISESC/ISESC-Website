@@ -10,6 +10,6 @@
 
 <AcademicDisplay />
 <br />
-<NewsFeed {news} title={true}/>
+<NewsFeed {news} title={true} />
 <br />
 <Directory />

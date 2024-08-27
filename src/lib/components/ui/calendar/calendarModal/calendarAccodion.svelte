@@ -77,7 +77,7 @@
 	>
 		<div
 			class={cn(
-				'mx-auto w-[18rem] max-w-full rounded-xl bg-white shadow-lg sm:w-[25rem]',
+				'mx-auto w-[18rem] max-w-full rounded-xl bg-white shadow-lg sm:w-[25rem] md:w-9/12',
 				'fixed left-1/2 top-1/2 z-[1001] max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg'
 			)}
 			{...$root}

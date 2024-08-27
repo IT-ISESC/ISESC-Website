@@ -7,8 +7,8 @@
 	import type { News } from '$lib/components/ui/news/newsCard/newsCard';
 	import CalendarModal from './calendarModal/calendarAccodion.svelte';
 	import CalendarCell from './eventOnCalendarCell.svelte';
-	import chevronLeft from '$lib/assets/icons/chevronLeft.svg'
-	import chevronRight from '$lib/assets/icons/chevronRight.svg'
+	import chevronLeft from '$lib/assets/icons/chevronLeft.svg';
+	import chevronRight from '$lib/assets/icons/chevronRight.svg';
 
 	const {
 		elements: { heading, prevButton, nextButton },
@@ -27,8 +27,7 @@
 	};
 
 	export let news: News[];
-	export let colors
-
+	export let colors;
 
 	let eventsInDate: any = {};
 	let eventsPeriods: any = {};
@@ -90,7 +89,7 @@
 		});
 	};
 
-	let ids: number[] = []
+	let ids: number[] = [];
 
 	$: filteredIds = news.map((Onew) => Onew.id);
 
@@ -119,7 +118,6 @@
 		}
 	}
 
-
 	let monthsWithEvent: number[];
 
 	$: {
@@ -139,9 +137,6 @@
 		]);
 		monthsWithEvent = [...monthsWithEventSet];
 	}
-
-	let i = 0
-
 
 </script>
 
@@ -171,7 +166,7 @@
 				use:nextButton
 			>
 				<!-- <Icon name="chevronRight" class="size-auto fill-current stroke-black stroke-0" /> -->
-				 <img class="size-6" id="chevron-right" alt="chevron-right" src={chevronRight} />
+				<img class="size-6" id="chevron-right" alt="chevron-right" src={chevronRight} />
 			</div>
 		</div>
 	</Calendar.Header>
@@ -186,8 +181,8 @@
 							<h1 class="text-3xl font-bold text-gray-400">No Events...</h1>
 						</div>
 					{:else}
-						{#each month.weeks as weekDates}
-							<div class="flex w-full flex-col">
+						<div class="grid w-full grid-cols-1">
+							{#each month.weeks as weekDates}
 								{#each weekDates as date}
 									{#if Object.keys(eventsDummyDate).includes(date.toString()) && moment(date.toString()).month() + 1 === month.value.month}
 										{#each eventsDummyDate[date.toString()] as event, i (i)}
@@ -200,7 +195,7 @@
 												class="h-full w-full border-b-2 border-l-2 border-gray-200"
 												on:click={() => {
 													ids = [event];
-													clickedDate = date.toString()
+													clickedDate = date.toString();
 												}}
 											>
 												<CalendarCell
@@ -222,8 +217,8 @@
 											use:trigger
 											class="h-full w-full border-b-2 border-l-2 border-gray-200"
 											on:click={() => {
-												ids = eventsInDate[date.toString()]
-												clickedDate = date.toString()
+												ids = eventsInDate[date.toString()];
+												clickedDate = date.toString();
 											}}
 										>
 											<CalendarCell
@@ -247,7 +242,7 @@
 													class="h-full w-full border-b-2 border-l-2 border-gray-200"
 													on:click={() => {
 														ids = [event.eventId];
-														clickedDate = date.toString()
+														clickedDate = date.toString();
 													}}
 												>
 													<CalendarCell
@@ -262,8 +257,8 @@
 										{/each}
 									{/if}
 								{/each}
-							</div>
-						{/each}
+							{/each}
+						</div>
 					{/if}
 				</div>
 			</div>
