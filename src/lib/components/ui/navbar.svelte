@@ -11,7 +11,9 @@
 				<button>Academic</button>
 				<div class="content">
 					<a href="/academic">Academic System</a>
+					<hr />
 					<a href="/scholarship">Scholarship</a>
+					<hr />
 					<a href="/directory">Professor & Staff Directory</a>
 				</div>
 			</div>
@@ -33,6 +35,8 @@
 
 	.dropdown button {
 		cursor: pointer;
+		border-radius: 5px;
+		padding: 0px 5px 0px 5px;
 	}
 
 	.dropdown button:hover {
@@ -52,11 +56,13 @@
 		background-color: #2b7292;
 		color: #ffffff !important;
 		z-index: 1000;
+		border-radius: 0px !important;
 	}
 
 	.dropdown a:hover {
 		background: #f2e8cf;
 		color: #012d48 !important;
+		border-radius: 0px !important;
 	}
 
 	.dropdown .content {
@@ -102,6 +108,8 @@
 		color: #012d48;
 		text-decoration: none;
 		margin-left: 20px;
+		border-radius: 5px;
+		padding: 0px 5px 0px 5px;
 	}
 
 	.Links a:hover {
