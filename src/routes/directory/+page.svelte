@@ -7,9 +7,8 @@
 
 <div class="flex flex-col items-center justify-center">
 	<ProfessorDirectory />
-	<hr
-		class="screens-sm:w-[85%] mx-auto my-[20px] h-px w-full max-w-[600px] border-none bg-secondary-blue"
-	/>
+	<hr class="hr-custom bg-secondary-blue" />
+
 	<StaffDirectory />
 </div>
 
@@ -128,5 +127,20 @@
 <style>
 	* {
 		overflow: hidden;
+	}
+
+	.hr-custom {
+		width: 100%;
+		max-width: 800px;
+		height: 1px;
+		/* background-color: var(--secondary-blue); */
+		border: none;
+		margin: 20px auto;
+	}
+
+	@media (max-width: 800px) {
+		.hr-custom {
+			width: 85%;
+		}
 	}
 </style>
