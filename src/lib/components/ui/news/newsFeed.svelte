@@ -8,20 +8,25 @@
 	export let news: News[];
 </script>
 
-<section>
+<section class="h-full">
 	{#if title}
-		<div class="container flex flex-row align-middle pb-7">
-			<h1 class="text-3xl font-bold text-primar-blue">News</h1>
+		<div class="container mx-auto flex flex-row justify-between gap-20 p-7 align-middle md:w-10/12">
+			<h1 class="text-3xl font-bold text-primary-blue">News</h1>
 		</div>
-  {/if}
-	<div
-		class="grid snap-x snap-mandatory scroll-px-8 auto-cols-[90%] grid-flow-col grid-rows-[min-content] gap-6 overflow-x-auto px-8 lg:auto-cols-[70%]"
-	>
-		{#each news as Onew (Onew.id)}
-			<NewsCard
-				className={`snap-start ${colors.length && colors && colors[(Onew.id - 1) % colors.length][0]}`}
-				news={Onew}
-			/>
-		{/each}
+		<!-- <div class="mx-auto container flex flex-row align-middle pb-7">
+			<h1 class="text-3xl font-bold text-primar-blue">News</h1>
+		</div> -->
+	{/if}
+	<div >
+		<div
+			class="minimal-scrollbar mx-auto grid h-full snap-x snap-mandatory scroll-px-8 auto-cols-[90%] grid-flow-col grid-rows-1 gap-6 overflow-x-auto px-8 md:w-10/12 md:auto-cols-[55%] lg:auto-cols-[35%]"
+		>
+			{#each news as Onew (Onew.id)}
+				<NewsCard
+					className={`aspect-video snap-start ${colors.length && colors && colors[(Onew.id - 1) % colors.length][0]}`}
+					news={Onew}
+				/>
+			{/each}
+		</div>
 	</div>
 </section>

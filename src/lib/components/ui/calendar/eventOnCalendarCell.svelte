@@ -5,8 +5,8 @@
 	import type { TagProps, TagLabel } from '$lib/components/ui/tag/index';
 	import Tag from '$lib/components/ui/tag/tag.svelte';
 	import { onMount } from 'svelte';
-	import clock from '$lib/assets/icons/clock.svg'
-	import location from '$lib/assets/icons/location.svg'
+	import clock from '$lib/assets/icons/clock.svg';
+	import location from '$lib/assets/icons/location.svg';
 
 	export let date;
 	export let ids: number[] = [];
@@ -46,9 +46,8 @@
 	}
 
 	$: if (type === 'single') {
-		newsInDate = news.filter((Onew) => ids.includes(Onew.id))
+		newsInDate = news.filter((Onew) => ids.includes(Onew.id));
 	}
-
 
 	const dummyNews = newsInDate[0];
 
@@ -94,7 +93,7 @@
 </script>
 
 <div
-	class="item-center flex h-full w-full justify-start gap-4 overflow-visible bg-gray-200/30 pr-2"
+	class="cursor-pointer item-center flex h-full w-full justify-start gap-4 overflow-visible bg-gray-200/30 pr-2"
 >
 	<div class="flex w-2 flex-col">
 		<!-- {#each correctTags as tag, i (i)}
@@ -102,149 +101,155 @@
 		{/each} -->
 		<div class={`h-full ${color} w-2`}></div>
 	</div>
-	{#if type === 'single'}
-		<div class="mt-1 flex flex-col gap-0 font-bold text-gray-400">
-			<div class="w-10">
-				<h1 class="relative text-3xl">{day.date()}</h1>
+	<div class="grid w-full grid-cols-10 gap-0">
+		{#if type === 'single'}
+			<div class="col-span-2 mt-1 gap-0 font-bold text-gray-700">
+				<div class="w-full">
+					<h1 class="text-3xl">{day.date()}</h1>
+				</div>
+				<div>
+					<h3 class="text-sm">{day.format('MMM')}</h3>
+				</div>
 			</div>
-			<div>
-				<h3 class="text-sm">{day.format('MMM')}</h3>
-			</div>
-		</div>
-	{:else if type === 'period'}
-		<div class="mt-1 flex flex-col gap-0 font-bold text-gray-400">
-			<div class="w-10">
-				<h1 class="relative text-3xl">
-					{startDay.date()}
-					<div class="absolute top-0 mt-1 inline text-base">
-						-{endDay.date()}
+		{:else if type === 'period'}
+			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-700">
+				<div>
+					<div class="w-full">
+						<h1 class="flex text-3xl">
+							{startDay.date()}
+						</h1>
 					</div>
+					<div>
+						<h3 class="-mt-1 text-sm">{startDay.format('MMM')}</h3>
+					</div>
+				</div>
+				<div class="mt-1 flex flex-col text-base">
+					-{endDay.date()}
 					{#if endDay.month() !== startDay.month()}
-						<div class="absolute left-10 top-6 text-xs">{endDay.format('MMM')}</div>
+						<div class="ml-1 text-xs">{endDay.format('MMM')}</div>
 					{/if}
-				</h1>
-			</div>
-			<div>
-				<h3 class="text-sm">{startDay.format('MMM')}</h3>
-			</div>
-		</div>
-	{:else}
-		<div class="mt-1 flex flex-col gap-0 font-bold text-gray-400">
-			<div class="w-10">
-				<h1 class="relative text-3xl">
-					{moment(dummyNews.dates[dummyEventDateIndex].startDate).date()}
-					<div class="absolute top-0 mt-1 inline text-base">
-						-{moment(dummyNews.dates[dummyEventDateIndex].endDate).date()}
-					</div>
-					<div class="absolute left-10 top-6 text-xs">
-						{moment(dummyNews.dates[dummyEventDateIndex].endDate).format('MMM')}
-					</div>
-				</h1>
-			</div>
-			<div>
-				<h3 class="text-sm">
-					{moment(dummyNews.dates[dummyEventDateIndex].startDate).format('MMM')}
-				</h3>
-			</div>
-		</div>
-	{/if}
-	{#if type === 'dummy'}
-		<div class="ml-6 flex flex-col">
-			<div class="pb-4 pt-1">
-				<h1 class="text-lg font-bold text-gray-600">{dummyNews.topic}</h1>
-				{#if dummyNews.dates[dummyEventDateIndex].time}
-				<div class="flex flex-row items-center gap-1">
-					<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
-					 <img class="size-6" id="clock" alt="clock" src={clock} />
-					<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-						{dummyNews.dates[dummyEventDateIndex].time || '-'}
-					</p>
 				</div>
-				{/if}
-				{#if dummyNews.dates[dummyEventDateIndex].location}
-				<div class="flex flex-row items-center gap-1">
-					<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
-					 <img class="size-6" id="location" alt="location" src={location} />
-					<p class="text-sm font-semibold text-gray-500">
-						{dummyNews.dates[dummyEventDateIndex].location || '-'}
-					</p>
+			</div>
+		{:else}
+			<div class="col-span-2 mt-1 flex flex-row gap-1 font-bold text-gray-700">
+				<div>
+					<div class="w-full">
+						<h1 class="flex text-3xl">
+							{moment(dummyNews.dates[dummyEventDateIndex].startDate).date()}
+						</h1>
+					</div>
+					<div>
+						<h3 class="-mt-1 text-sm">
+							{moment(dummyNews.dates[dummyEventDateIndex].startDate).format('MMM')}
+						</h3>
+					</div>
 				</div>
-				{/if}
-				<div class="flex flex-row flex-wrap gap-2 pt-2">
-					{#each dummyNews.tags as tag}
-						<Tag {...tag.props} class="bg-opacity-50">
-							{tag.label}
-						</Tag>
+				<div class="mt-1 flex flex-col text-base">
+					-{moment(dummyNews.dates[dummyEventDateIndex].endDate).date()}
+				<div class="ml-1 text-xs">
+					{moment(dummyNews.dates[dummyEventDateIndex].endDate).format('MMM')}
+				</div>
+				</div>
+			</div>
+		{/if}
+		{#if type === 'dummy'}
+			<div class="col-span-7 col-start-4 ml-6 md:col-start-3">
+				<div class="pb-4 pt-1">
+					<h1 class="text-lg font-bold text-gray-700">{dummyNews.topic}</h1>
+					{#if dummyNews.dates[dummyEventDateIndex].time}
+						<div class="flex flex-row items-center gap-1">
+							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+							<img class="size-6" id="clock" alt="clock" src={clock} />
+							<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
+								{dummyNews.dates[dummyEventDateIndex].time || '-'}
+							</p>
+						</div>
+					{/if}
+					{#if dummyNews.dates[dummyEventDateIndex].location}
+						<div class="flex flex-row items-center gap-1">
+							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+							<img class="size-6" id="location" alt="location" src={location} />
+							<p class="text-sm font-semibold text-gray-700">
+								{dummyNews.dates[dummyEventDateIndex].location || '-'}
+							</p>
+						</div>
+					{/if}
+					<div class="flex flex-row flex-wrap gap-2 pt-2">
+						{#each dummyNews.tags as tag}
+							<Tag {...tag.props} class="bg-opacity-50">
+								{tag.label}
+							</Tag>
+						{/each}
+					</div>
+				</div>
+			</div>
+		{:else}
+			<div class="col-span-7 col-start-4 ml-6 md:col-start-3">
+				{#if newsInDate.length > 2}
+					{#each newsInDate.slice(0, 2) as news, i (i)}
+						<div class="pb-4 pt-1">
+							<h1 class="text-lg font-bold text-gray-700">{news.topic}</h1>
+							{#if news.dates[eventDateIndex[i]].time}
+								<div class="flex flex-row items-center gap-1">
+									<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+									<img class="size-6" id="clock" alt="clock" src={clock} />
+									<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
+										{news.dates[eventDateIndex[i]].time || '-'}
+									</p>
+								</div>
+							{/if}
+							{#if news.dates[eventDateIndex[i]].location}
+								<div class="flex flex-row items-center gap-1">
+									<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+									<img class="size-6" id="location" alt="location" src={location} />
+									<p class="text-sm font-semibold text-gray-700">
+										{news.dates[eventDateIndex[i]].location || '-'}
+									</p>
+								</div>
+							{/if}
+							<div class="flex flex-row flex-wrap gap-2 pt-2">
+								{#each news.tags as tag}
+									<Tag {...tag.props} class="bg-opacity-50">
+										{tag.label}
+									</Tag>
+								{/each}
+							</div>
+						</div>
 					{/each}
-				</div>
+					<div class="lpt-1 pb-4 text-lg font-bold tracking-wider text-gray-400">...More</div>
+				{:else}
+					{#each newsInDate as news, i (i)}
+						<div class="pb-4 pt-1">
+							<h1 class="text-lg font-bold text-gray-700">{news.topic}</h1>
+							{#if news.dates[eventDateIndex[i]].time}
+								<div class="flex flex-row items-center gap-1">
+									<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
+									<img class="size-6" id="clock" alt="clock" src={clock} />
+									<p class="pb-[0.1rem] text-sm font-semibold text-gray-700">
+										{news.dates[eventDateIndex[i]].time || '-'}
+									</p>
+								</div>
+							{/if}
+							{#if news.dates[eventDateIndex[i]].location}
+								<div class="flex flex-row items-center gap-1">
+									<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
+									<img class="size-6" id="location" alt="location" src={location} />
+									<p class="text-sm font-semibold text-gray-700">
+										{news.dates[eventDateIndex[i]].location || '-'}
+									</p>
+								</div>
+							{/if}
+							<div class="flex flex-row flex-wrap gap-2 pt-2">
+								{#each news.tags as tag}
+									<Tag {...tag.props} class="bg-opacity-50">
+										{tag.label}
+									</Tag>
+								{/each}
+							</div>
+						</div>
+					{/each}
+				{/if}
 			</div>
-		</div>
-	{:else}
-		<div class="ml-6 flex flex-col">
-			{#if newsInDate.length > 2}
-				{#each newsInDate.slice(0, 2) as news, i (i)}
-					<div class="pb-4 pt-1">
-						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
-						{#if news.dates[eventDateIndex[i]].time}
-						<div class="flex flex-row items-center gap-1">
-							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
-							 <img class="size-6" id="clock" alt="clock" src={clock} />
-							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].time || '-'}
-							</p>
-						</div>
-						{/if}
-						{#if news.dates[eventDateIndex[i]].location}
-						<div class="flex flex-row items-center gap-1">
-							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
-							 <img class="size-6" id="location" alt="location" src={location} />
-							<p class="text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].location || '-'}
-							</p>
-						</div>
-						{/if}
-						<div class="flex flex-row flex-wrap gap-2 pt-2">
-							{#each news.tags as tag}
-								<Tag {...tag.props} class="bg-opacity-50">
-									{tag.label}
-								</Tag>
-							{/each}
-						</div>
-					</div>
-				{/each}
-				<div class="lpt-1 pb-4 text-lg font-bold tracking-wider text-gray-400">...More</div>
-			{:else}
-				{#each newsInDate as news, i (i)}
-					<div class="pb-4 pt-1">
-						<h1 class="text-lg font-bold text-gray-600">{news.topic}</h1>
-						{#if news.dates[eventDateIndex[i]].time}
-						<div class="flex flex-row items-center gap-1">
-							<!-- <Icon name="clock" class="fill-none stroke-gray-500 stroke-2" /> -->
-							 <img class="size-6" id="clock" alt="clock" src={clock} />
-							<p class="pb-[0.1rem] text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].time || '-'}
-							</p>
-						</div>
-						{/if}
-						{#if news.dates[eventDateIndex[i]].location}
-						<div class="flex flex-row items-center gap-1">
-							<!-- <Icon name="location" class="fill-none stroke-gray-500 stroke-2" /> -->
-							 <img class="size-6" id="location" alt="location" src={location} />
-							<p class="text-sm font-semibold text-gray-500">
-								{news.dates[eventDateIndex[i]].location || '-'}
-							</p>
-						</div>
-						{/if}
-						<div class="flex flex-row flex-wrap gap-2 pt-2">
-							{#each news.tags as tag}
-								<Tag {...tag.props} class="bg-opacity-50">
-									{tag.label}
-								</Tag>
-							{/each}
-						</div>
-					</div>
-				{/each}
-			{/if}
-		</div>
-	{/if}
+		{/if}
+	</div>
 </div>
