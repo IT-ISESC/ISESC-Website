@@ -1,7 +1,6 @@
 <script>
 	import AcademicDisplay from '$lib/components/ui/landing/academicDisplay.svelte';
 	import Directory from '$lib/components/ui/landing/directory.svelte';
-	import News from '$lib/components/ui/landing/news.svelte';
 	import NewsFeed from '$lib/components/ui/news/newsFeed.svelte';
 
 	export let data;
@@ -13,3 +12,5 @@
 <NewsFeed {news} title={true} />
 <br />
 <Directory />
+<br />
+<br />
