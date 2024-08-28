@@ -68,17 +68,17 @@
 	export { className as class };
 </script>
 
-<div {...$portalled} use:portalled class="z-[1001] pointer-events-none">
+<div {...$portalled} use:portalled class="z-[1001] ">
 	<div
 		{...$overlay}
 		use:overlay
 		class="fixed inset-0 z-[1002] bg-black/50 p-2"
-		transition:fade={{ duration: 200 }}
+		transition:fade={{ duration: 150 }}
 	>
 		<div
 			class={cn(
 				'mx-auto w-[18rem] max-w-full rounded-xl bg-white shadow-lg sm:w-[25rem] md:w-9/12',
-				'fixed left-1/2 top-1/2 z-[1002] max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg pointer-events-auto'
+				'fixed left-1/2 top-1/2 z-[1002] max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg'
 			)}
 			{...$root}
 			{...$modalContent}
