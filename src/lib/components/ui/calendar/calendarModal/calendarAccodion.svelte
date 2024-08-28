@@ -68,7 +68,7 @@
 	export { className as class };
 </script>
 
-<div {...$portalled} use:portalled class="z-[1001] ">
+<div {...$portalled} use:portalled class="pointer-events-auto z-[1001] ">
 	<div
 		{...$overlay}
 		use:overlay

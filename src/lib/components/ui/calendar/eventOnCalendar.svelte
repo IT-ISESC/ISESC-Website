@@ -139,10 +139,19 @@
 		monthsWithEvent = [...monthsWithEventSet];
 	}
 
+	const body = document.body
+	$: { if ($open === true) {
+		body.classList.add('pointer-events-none')
+	} else {
+		body.classList.remove('pointer-events-none')
+	} 
+
+	}
+
 </script>
 
 <Calendar.Root
-	class={`border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card ${$open && 'pointer-events-none'}`}
+	class={`border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card `}
 	{isDateUnavailable}
 	let:weekdays
 	weekdayFormat="short"

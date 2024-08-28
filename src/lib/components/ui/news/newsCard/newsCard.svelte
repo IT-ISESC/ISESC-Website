@@ -22,10 +22,17 @@
 	const dateDisplay = dates[0].display
 
 	export let className: string;
+	
+	const body = document.body
+	$: { if ($open === true) {
+		body.classList.add('pointer-events-none')
+	} else {
+		body.classList.remove('pointer-events-none')
+	}}
 </script>
 
 <div
-	class={cn(`cursor-pointer relative h-full w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1 ${$open && 'pointer-events-none'}`, className)}
+	class={cn(`cursor-pointer relative h-full w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1 `, className)}
 	{...$trigger}
 	use:trigger
 >
@@ -58,7 +65,7 @@
 </div>
 
 {#if $open}
-	<div class="z-[1001]" {...$portalled} use:portalled>
+	<div class="pointer-events-auto z-[1001]" {...$portalled} use:portalled>
 		<div
 			{...$overlay}
 			use:overlay
