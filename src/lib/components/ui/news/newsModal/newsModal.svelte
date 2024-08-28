@@ -86,7 +86,7 @@
 
 			</div>
 
-			<button
+			<!-- <button
 				{...$close}
 				use:close
 				aria-label="close"
@@ -95,7 +95,7 @@
                 rounded-full p-1"
 			>
 				<img class="size-6" id="close" alt="close" src={closeIcon} />
-			</button>
+			</button> -->
 		</ScrollArea.Content>
 	</ScrollArea.Viewport>
 	<ScrollArea.Scrollbar
