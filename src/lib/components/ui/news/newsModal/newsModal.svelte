@@ -36,7 +36,7 @@
 </script>
 <!-- <SelfScroll title={topic} description={newsDescription} links={links || [['', '']]} time={time || ''} location={location || ''}/> -->
 
-<ScrollArea.Root class="relative h-96 px-4">
+<ScrollArea.Root class="relative h-96 px-4 z-[1003]">
 	<ScrollArea.Viewport class="h-full w-full p-2">
 		<ScrollArea.Content>
 			<div class="pr-6 top-0">
@@ -74,11 +74,12 @@
 					{#each newLinks as link, i (i)}
 						<p
 							on:click={() => {
+								//@ts-ignore
 								window.location = link[1]
 							}}
 							class="cursor-pointer item-center flex flex-row justify-start gap-2 pt-4 text-center align-middle"
 						>
-							<img class="size-auto" alt="logo" src={iconNames[i]} />
+							<img class="size-6" alt="logo" src={iconNames[i]} />
 							{link[0]}
 						</p>
 					{/each}
@@ -90,7 +91,7 @@
 				{...$close}
 				use:close
 				aria-label="close"
-				class="text-magnum-800 hover:bg-magnum-100 focus:shadow-magnum-400 absolute right-1 top-1 inline-flex
+				class="hover:bg-gray-100 focus:shadow-gray-400 absolute right-4 top-1 inline-flex
                 h-6 w-6 appearance-none items-center justify-center
                 rounded-full p-1"
 			>
