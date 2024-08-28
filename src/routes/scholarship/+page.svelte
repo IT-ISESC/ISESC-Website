@@ -13,9 +13,14 @@
 			topic="How to be eligible for a scholarship and what are working hours?"
 			link="scholarship/eligibility"
 		/>
-		<Cards
-			topic="How to apply for a scholarship and documents checklist."
-			link="scholarship/apply"
-		/>
+		<a
+			href="https://drive.google.com/file/d/1kZum-LZgcw3lsjDXKSJRrumCzGO_ERjD/view?usp=sharing"
+			target="_blank"
+			class="flex h-[50px] w-[337px] cursor-pointer items-center rounded-[20px] bg-[#EBF2F6] shadow-md"
+		>
+			<p class="ml-4 font-bold text-[#2B7292]">
+				How to apply for a scholarship and documents checklist.
+			</p>
+		</a>
 	</div>
 </div>
