@@ -11,7 +11,7 @@
 			SYSTEM!
 		</h2>
 		<br />
-		<a href="/directory">Click Here to view</a>
+		<a href="/academic">Click Here to view</a>
 	</div>
 	<div class="col-right">
 		<img src={Book_Academic} alt="Book Academic" />
