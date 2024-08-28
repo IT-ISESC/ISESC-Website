@@ -142,7 +142,7 @@
 </script>
 
 <Calendar.Root
-	class="border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card"
+	class={`border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card ${$open && 'pointer-events-none'}`}
 	{isDateUnavailable}
 	let:weekdays
 	weekdayFormat="short"

@@ -25,7 +25,7 @@
 </script>
 
 <div
-	class={cn('cursor-pointer relative h-full w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1', className)}
+	class={cn(`cursor-pointer relative h-full w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1 ${$open && 'pointer-events-none'}`, className)}
 	{...$trigger}
 	use:trigger
 >
