@@ -146,7 +146,10 @@
 			if ($open === true) {
 				body.classList.add('pointer-events-none');
 			} else {
-				body.classList.remove('pointer-events-none');
+				
+				setTimeout(() => {
+					body.classList.remove('pointer-events-none')
+				}, 500)
 			}
 		}
 	}
