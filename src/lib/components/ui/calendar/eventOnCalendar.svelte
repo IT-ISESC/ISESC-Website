@@ -21,7 +21,6 @@
 		states: { open }
 	} = createDialog({
 		forceVisible: true,
-		preventScroll: false
 	});
 
 	const isDateUnavailable: Calendar.Props['isDateUnavailable'] = (date) => {
@@ -149,7 +148,7 @@
 				
 				setTimeout(() => {
 					body.classList.remove('pointer-events-none')
-				}, 500)
+				}, 100)
 			}
 		}
 	}
