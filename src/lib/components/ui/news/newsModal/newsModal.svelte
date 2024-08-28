@@ -36,7 +36,7 @@
 </script>
 <!-- <SelfScroll title={topic} description={newsDescription} links={links || [['', '']]} time={time || ''} location={location || ''}/> -->
 
-<ScrollArea.Root class="relative h-96 px-4">
+<ScrollArea.Root class="relative h-96 px-4 z-[1003]">
 	<ScrollArea.Viewport class="h-full w-full p-2">
 		<ScrollArea.Content>
 			<div class="pr-6 top-0">
