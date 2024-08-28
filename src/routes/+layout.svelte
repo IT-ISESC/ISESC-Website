@@ -11,4 +11,6 @@
 </svelte:head>
 
 <Navbar />
-<slot></slot>
+<div style="max-width: 640px; margin:auto;">
+	<slot></slot>
+</div>
