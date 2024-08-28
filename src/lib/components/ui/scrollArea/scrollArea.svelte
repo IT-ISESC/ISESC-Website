@@ -40,7 +40,7 @@
 				{#if time}
 					<div class="flex flex-row gap-2 items-center justify-start align-center text-center">
 						<!-- <Icon name="clock" class="size-auto fill-none stroke-black stroke-2" /> -->
-						 <img class="size-auto" id="clock" alt="clock" src={clock} />
+						 <img class="size-4" id="clock" alt="clock" src={clock} />
 						<h4
 							class="my-1 whitespace-break-spaces text-sm font-semibold leading-none tracking-[-0.01em] text-foreground"
 						>
@@ -51,7 +51,7 @@
 				{#if location}
 					<div class="mb-2 flex flex-row gap-2 items-center justify-start align-center text-center">
 						<!-- <Icon name="location" class="size-auto fill-none stroke-black stroke-2" /> -->
-						 <img class="size-auto" id="location" alt="location" src={locationIcon} />
+						 <img class="size-4" id="location" alt="location" src={locationIcon} />
 						<h4
 							class="my-1 whitespace-break-spaces text-sm font-semibold leading-none tracking-[-0.01em] text-foreground"
 						>
@@ -72,7 +72,7 @@
 								name={`${iconNames[i]}`}
 								class={`size-auto ${iconNames[i] === 'link' && 'fill-none stroke-black stroke-2'}`}
 							/> -->
-							<img class="size-auto" alt="logo" src={iconNames[i]} />
+							<img class="size-4" alt="logo" src={iconNames[i]} />
 							{link[0]}
 						</a>
 					{/each}

@@ -7,8 +7,9 @@
 	import Icon from '../../icons/icon.svelte';
 	import type { IconName } from '../../icons';
 	import { onMount } from 'svelte';
-	import caretUp from '$lib/assets/icons/caretUp.svg'
-	import caretDown from '$lib/assets/icons/caretDown.svg'
+	import caretUp from '$lib/assets/icons/caretUp.svg';
+	import caretDown from '$lib/assets/icons/caretDown.svg';
+	import closeIcon from '$lib/assets/icons/close.svg';
 
 	export let portalled;
 	export let overlay;
@@ -37,7 +38,7 @@
 	let eventDateIndex: number[];
 
 	$: if (ids) {
-		filteredNews = news.filter((Onew) => ids.includes(Onew.id))
+		filteredNews = news.filter((Onew) => ids.includes(Onew.id));
 	}
 	$: if (filteredNews) {
 		eventDateIndex = filteredNews.map((news) => {
@@ -53,22 +54,21 @@
 		});
 	}
 
-
 	$: items = filteredNews.map((Onew, i) => ({
 		id: `item-${i + 1}`,
 		title: Onew.topic,
 		dates: Onew.dates[0].display,
 		description: Onew.newsDescription,
 		links: Onew.links || [],
-		time: Onew.dates[eventDateIndex[0]].time, 
-		location: Onew.dates[eventDateIndex[0]].location, 
+		time: Onew.dates[eventDateIndex[0]].time,
+		location: Onew.dates[eventDateIndex[0]].location
 	}));
 
 	let className = '';
 	export { className as class };
 </script>
 
-<div {...$portalled} use:portalled class="pointer-events-auto z-[1001] ">
+<div {...$portalled} use:portalled class="pointer-events-auto z-[1001]">
 	<div
 		{...$overlay}
 		use:overlay
@@ -106,10 +106,10 @@
 							{title}
 							{#if $isSelected(id)}
 								<!-- <Icon name="caretUp" class="size-8 fill-none stroke-black stroke-2" /> -->
-								 <img class="size-6" id="caret-up" alt="caret-up" src={caretUp} />
+								<img class="size-6" id="caret-up" alt="caret-up" src={caretUp} />
 							{:else}
 								<!-- <Icon name="caretDown" class="size-8 fill-none stroke-black stroke-2" /> -->
-								 <img class="size-6" id="caret-down" alt="caret-down" src={caretDown} />
+								<img class="size-6" id="caret-down" alt="caret-down" src={caretDown} />
 							{/if}
 						</button>
 					</h2>
