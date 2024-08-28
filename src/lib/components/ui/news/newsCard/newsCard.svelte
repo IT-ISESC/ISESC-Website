@@ -88,8 +88,9 @@
 			class="fixed inset-0 z-[1002] bg-black/50"
 			transition:fade={{ duration: 150 }}
 		></div>
+		<!-- Remove max width when responsive for desktop -->
 		<div
-			class="fixed left-1/2 top-1/2 z-[1002] max-h-[85vh] w-[90vw]
+			class="fixed left-1/2 top-1/2 z-[1002] max-h-[85vh] max-w-[640px] w-[90vw]
             -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white
             p-4 shadow-lg"
 			transition:flyAndScale={{

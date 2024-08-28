@@ -75,9 +75,10 @@
 		class="fixed inset-0 z-[1002] bg-black/50 p-2"
 		transition:fade={{ duration: 150 }}
 	>
+		<!-- Change max width to full when responsive for desktop -->
 		<div
 			class={cn(
-				'mx-auto w-[18rem] max-w-full rounded-xl bg-white shadow-lg sm:w-[25rem] md:w-9/12',
+				'mx-auto w-[18rem] rounded-xl bg-white shadow-lg sm:w-[25rem] md:w-9/12 max-w-[640px]',
 				'fixed left-1/2 top-1/2 z-[1002] max-h-[100vh] w-[90vw] -translate-x-1/2 -translate-y-1/2 rounded-xl bg-white p-0 shadow-lg'
 			)}
 			{...$root}
