@@ -9,6 +9,7 @@
 	import CalendarCell from './eventOnCalendarCell.svelte';
 	import chevronLeft from '$lib/assets/icons/chevronLeft.svg';
 	import chevronRight from '$lib/assets/icons/chevronRight.svg';
+	import { browser } from '$app/environment';
 
 	const {
 		elements: { heading, prevButton, nextButton },
@@ -20,7 +21,7 @@
 		states: { open }
 	} = createDialog({
 		forceVisible: true,
-		preventScroll: false,
+		preventScroll: false
 	});
 
 	const isDateUnavailable: Calendar.Props['isDateUnavailable'] = (date) => {
@@ -139,15 +140,16 @@
 		monthsWithEvent = [...monthsWithEventSet];
 	}
 
-	const body = document.body
-	$: { if ($open === true) {
-		body.classList.add('pointer-events-none')
-	} else {
-		body.classList.remove('pointer-events-none')
-	} 
-
+	$: {
+		if (browser && $open !== undefined) {
+			const body = document.body;
+			if ($open === true) {
+				body.classList.add('pointer-events-none');
+			} else {
+				body.classList.remove('pointer-events-none');
+			}
+		}
 	}
-
 </script>
 
 <Calendar.Root

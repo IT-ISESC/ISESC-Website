@@ -6,50 +6,65 @@
 	import { cn } from '$lib/utils';
 	import { type News } from './newsCard';
 	import NewsModal from '../newsModal/newsModal.svelte';
-	import whiteLogo from '$lib/assets/news/logo_white.svg'
+	import whiteLogo from '$lib/assets/news/logo_white.svg';
+	import { browser } from '$app/environment';
 
 	const {
 		elements: { trigger, overlay, content, title, description, close, portalled },
 		states: { open }
 	} = createDialog({
 		forceVisible: true,
-		preventScroll: false,
-
+		preventScroll: false
 	});
 
 	export let news: News;
 	const { topic, tags, dates, imgSrc, newsDescription } = news;
-	const dateDisplay = dates[0].display
+	const dateDisplay = dates[0].display;
 
 	export let className: string;
-	
-	const body = document.body
-	$: { if ($open === true) {
-		body.classList.add('pointer-events-none')
-	} else {
-		body.classList.remove('pointer-events-none')
-	}}
+
+	$: {
+		if (browser && $open !== undefined) {
+			const body = document.body;
+			if ($open === true) {
+				body.classList.add('pointer-events-none');
+			} else {
+				body.classList.remove('pointer-events-none');
+			}
+		}
+	}
+	$: console.log($open)
 </script>
 
 <div
-	class={cn(`cursor-pointer relative h-full w-full rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1 `, className)}
+	class={cn(
+		`relative h-full w-full cursor-pointer rounded-[0.9375rem] bg-secondary-blue pb-1 pr-1 `,
+		className
+	)}
 	{...$trigger}
 	use:trigger
 >
 	{#if imgSrc === 'default'}
-		<div class="flex items-center justify-center align-middle h-full left-0 top-0 w-full rounded-[0.9375rem] object cover brightness-75 bg-primary-blue">
-			<img class="aspect-square w-3/12 opacity-30" id="white-logo" alt="white-logo" src={whiteLogo} />
+		<div
+			class="object cover left-0 top-0 flex h-full w-full items-center justify-center rounded-[0.9375rem] bg-primary-blue align-middle brightness-75"
+		>
+			<img
+				class="aspect-square w-3/12 opacity-30"
+				id="white-logo"
+				alt="white-logo"
+				src={whiteLogo}
+			/>
 		</div>
 	{:else}
-	<img
-		{...$trigger}
-		use:trigger
-		src={imgSrc}
-		alt="news"
-		class="left-0 top-0 w-full rounded-[0.9375rem] object-cover brightness-75"
-	/>
+		<img
+			{...$trigger}
+			use:trigger
+			src={imgSrc}
+			alt="news"
+			class="left-0 top-0 w-full rounded-[0.9375rem] object-cover brightness-75"
+		/>
 	{/if}
-	<div class="absolute left-4 top-2 flex flex-col gap-2 max-w-64">
+	<div class="absolute left-4 top-2 flex max-w-64 flex-col gap-2">
 		<h1 class="text-xl font-bold text-white">{topic}</h1>
 	</div>
 	<div class="absolute bottom-2 left-4 flex flex-col gap-2">
@@ -84,7 +99,7 @@
 			{...$content}
 			use:content
 		>
-			<NewsModal {news} {title} {description} {content} {close} {portalled} {overlay}/>
+			<NewsModal {news} {title} {description} {content} {close} {portalled} {overlay} />
 		</div>
 	</div>
 {/if}
