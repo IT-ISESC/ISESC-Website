@@ -21,7 +21,7 @@
 		</div>
 	</div>
 </div>
-<div style="height:60px"></div>
+<div style="height:70px"></div>
 
 <style>
 	.NavBarContainer {
@@ -118,7 +118,7 @@
 		padding: 0px 5px 0px 5px;
 	}
 
-	@media (max-width: 640px) {
+	@media (max-width: 800px) {
 		.NavBar {
 			width: 100%;
 			margin: 0;

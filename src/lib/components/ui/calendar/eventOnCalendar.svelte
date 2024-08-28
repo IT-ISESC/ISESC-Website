@@ -9,6 +9,7 @@
 	import CalendarCell from './eventOnCalendarCell.svelte';
 	import chevronLeft from '$lib/assets/icons/chevronLeft.svg';
 	import chevronRight from '$lib/assets/icons/chevronRight.svg';
+	import { browser } from '$app/environment';
 
 	const {
 		elements: { heading, prevButton, nextButton },
@@ -19,7 +20,7 @@
 		elements: { trigger, overlay, content, title, description, close, portalled },
 		states: { open }
 	} = createDialog({
-		forceVisible: true
+		forceVisible: true,
 	});
 
 	const isDateUnavailable: Calendar.Props['isDateUnavailable'] = (date) => {
@@ -138,10 +139,23 @@
 		monthsWithEvent = [...monthsWithEventSet];
 	}
 
+	$: {
+		if (browser && $open !== undefined) {
+			const body = document.body;
+			if ($open === true) {
+				body.classList.add('pointer-events-none');
+			} else {
+				
+				setTimeout(() => {
+					body.classList.remove('pointer-events-none')
+				}, 100)
+			}
+		}
+	}
 </script>
 
 <Calendar.Root
-	class="border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card"
+	class={`border-dark-10 bg-background-alt mt-6 rounded-[0.9375rem] border px-4 py-[1.375rem] shadow-card `}
 	{isDateUnavailable}
 	let:weekdays
 	weekdayFormat="short"
