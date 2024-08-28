@@ -11,8 +11,8 @@
 
 	<StaffDirectory />
 </div>
-
-<div class="screens-sm:w-[90%] mx-auto flex w-full max-w-[1000px] flex-wrap justify-around">
+<br />
+<div class="screens-sm:w-[90%] mx-auto flex w-full max-w-[750px] flex-wrap justify-around">
 	<!-- Academic Affairs -->
 	<StaffCard
 		nickname="Sorn"
