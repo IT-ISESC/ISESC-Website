@@ -1,10 +1,10 @@
 <script>
 	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
 
-	export let nickname = 'Missing';
-	export let fullname = 'Missing';
-	export let tag = 'Missing';
-	export let role = 'Missing';
+	export let nickname = '';
+	export let fullname = '';
+	export let tag = '';
+	export let role = '';
 	export let image = no_staff;
 
 	export let tagColor = '#84140e';
