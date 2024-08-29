@@ -3,7 +3,7 @@
 
 	onMount(() => {
 		setTimeout(() => {
-			window.location.href = '/';
+			window.location.href = '/staff-search';
 		}, 1000); // Delay of 1000ms or 1 second
 	});
 </script>
