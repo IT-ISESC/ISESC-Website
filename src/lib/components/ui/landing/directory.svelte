@@ -13,7 +13,7 @@
 			Directory
 		</h2>
 		<br />
-		<a href="/directory">Click Here to view</a>
+		<a href="/directory" class = 'font-medium'>Click Here to view</a>
 	</div>
 </section>
 
@@ -47,7 +47,7 @@
 		font-size: max(24px, 4vw);
 		font-weight: bold;
 		line-height: max(25px, 4vw);
-		margin-bottom: 5px;
+		margin-bottom: -8px;
 	}
 
 	section > .col-right > a {

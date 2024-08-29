@@ -10,7 +10,7 @@
 			SYSTEM!
 		</h2>
 		<br />
-		<a href="/academic">Click Here to view</a>
+		<a href="/academic" class = 'font-medium'>Click Here to view</a>
 	</div>
 	<div class="col-right">
 		<img src={Book_Academic} alt="Book Academic" />
@@ -35,7 +35,7 @@
 		font-size: max(24px, 4vw);
 		font-weight: bold;
 		line-height: max(25px, 4vw);
-		margin-bottom: 5px;
+		margin-bottom: -8px;
 	}
 
 	section > .col-right {
