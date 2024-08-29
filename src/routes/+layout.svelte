@@ -2,7 +2,6 @@
 	import '../app.css';
 	import Navbar from '$lib/components/ui/navbar.svelte';
 	export let title = 'ISESC';
-	// TODO Make ISESC.ico to use
 	let favicon = '/default-favicon.ico';
 </script>
 
@@ -12,4 +11,7 @@
 </svelte:head>
 
 <Navbar />
-<slot></slot>
+<div style="max-width: 640px; margin: auto;">
+	<slot></slot>
+</div>
+<br />

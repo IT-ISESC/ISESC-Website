@@ -1,0 +1,2 @@
+type IconName = 'delete' | 'search' | 'caretUpDown' | 'check' | 'close' | 'chevronLeft' | 'chevronRight' | 'caretDown' | 'caretUp' | 'clock' | 'location' | 'link' | 'instagram' | 'facebook' | 'register'
+export { type IconName }
