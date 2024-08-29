@@ -1,22 +1,43 @@
 <script>
-	import { scale } from 'svelte/transition';
-	import { expoInOut } from 'svelte/easing';
+	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
 	export let title;
-	export let image;
+	let image = no_staff;
 	export let language;
 	export let ebookBundle;
 	export let pdfLink;
 	export let appleLink;
 	export let googleLink;
 	export let amazonLink;
+
+	export let nickname = 'nick';
+	export let fullname = 'full';
+	export let tag = 'tag';
+	export let tagColor = '#84140e';
+	export let role = 'whatever';
 </script>
+
+<!-- <div class="relative">
+	<div id="wrapper">
+		<img alt="Staff Image" src={image} />
+		<p id="nickname">P'{nickname}</p>
+		<p id="fullname">{fullname}</p>
+		<div class="mt-[-5px]">
+			<p id="tag" style="--tag-background: {tagColor};">{tag}</p>
+		</div>
+		<p id="role">{role}</p>
+	</div>
+	<span id="shadowBox"> </span>
+</div> -->
 
 <div class="relative">
 	<div id="wrapper">
-		<!-- svelte-ignore a11y_img_redundant_alt -->
 		<img alt="Staff Image" src={image} />
 		<p id="nickname">P'{title}</p>
-		<p id="fullname">{language}</p>
+		<p id="fullname">{title}</p>
+		<div class="mt-[-5px]">
+			<p id="tag" style="--tag-background: {tagColor};">{language}</p>
+		</div>
+		<p id="role">{role}</p>
 	</div>
 	<span id="shadowBox"> </span>
 </div>

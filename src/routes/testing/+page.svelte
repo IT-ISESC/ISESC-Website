@@ -1,15 +1,15 @@
 <script>
 	import { onMount } from 'svelte';
 
-	import { bookData } from './bookData.js';
-	import Menu from './Menu.svelte';
-	import Search from './Search.svelte';
-	import Book from './Book.svelte';
-	import NoResults from './NoResults.svelte';
+	import { bookData } from './bookData.js'; // Data from a js file
+	import Search from './Search.svelte'; // Basically a search bar component
+	import Book from './Book.svelte'; // Staff information component
+	import NoResults from './NoResults.svelte'; //To display when there is no results
 
 	let languages = []; // menu built from bookData
 	let selectedLang = ''; //  menu selection
 
+	// TODO Basically adds languages to the list of languages
 	const getLanguages = () => {
 		for (let bookObj of bookData) {
 			if (!languages.includes(bookObj.language)) {
@@ -27,6 +27,7 @@
 	$: if (selectedLang) getBooksByLang();
 	$: console.log(filteredBooks, selectedLang);
 
+	// TODO Filters book out by languages
 	const getBooksByLang = () => {
 		// resets search input if menu is being used
 		searchTerm = '';
@@ -42,6 +43,7 @@
 	// resets language menu if search input is used
 	$: if (searchTerm) selectedLang = '';
 
+	// TODO Searches the book name
 	const searchBooks = () => {
 		return (filteredBooks = bookData.filter((book) => {
 			let bookTitle = book.title.toLowerCase();
@@ -51,8 +53,8 @@
 </script>
 
 <section id="query-section">
-	<Menu {languages} bind:selectedLang />
-	<Search bind:searchTerm on:input={searchBooks} />
+	<!-- <Menu {languages} bind:selectedLang /> -->
+	<Search bind:searchTerm on:input={searchBooks} {languages} bind:selectedLang />
 </section>
 
 <main id="bookshelf">

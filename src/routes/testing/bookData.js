@@ -1,6 +1,5 @@
 export const bookData = [
 	{
-		image: 'https://store.pariyatti.org/assets/images/thumbnail_AtP_2Ed.jpg',
 		title: 'Along the Path (2nd Ed.)',
 		language: 'English',
 		bundle: 'Along-the-Path--ebook-PDF_p_2562.html',
@@ -12,8 +11,6 @@ export const bookData = [
 			'https://www.amazon.com/gp/product/1928706568/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&tag=pariyatti-20&camp=1789&creative=9325&linkCode=as2&creativeASIN=1928706568&linkId=c0c744876f27f6eeac03fa811ba9a2b6'
 	},
 	{
-		image:
-			'http://store.pariyatti.org/thumbnail.asp?file=https://store.pariyatti.org/assets/images/776533.jpg&maxx=100&maxy=0',
 		title: 'An Ancient Path',
 		language: 'English',
 		bundle: 'http://store.pariyatti.org/Ancient-Path-An--eBook_p_4596.html',
@@ -25,8 +22,6 @@ export const bookData = [
 			'http://www.amazon.com/gp/product/B00B3M4BUY/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B00B3M4BUY&linkCode=as2&tag=pariyatti-20&linkId=CP5UYCAE2NNGJTJF'
 	},
 	{
-		image:
-			'http://store.pariyatti.org/thumbnail.asp?file=https://store.pariyatti.org/assets/images/771430.jpg&maxx=100&maxy=0',
 		title: 'Approaching the Dhamma',
 		language: 'English',
 		bundle: 'https://store.pariyatti.org/Approaching-the-Dhamma--eBook-PDF-ePub-Mobi_p_2566.html',

@@ -1,6 +1,9 @@
 <script>
 	export let searchTerm;
 	import staff_dir from '$lib/assets/directory/staff_dir.svg';
+
+	export let languages;
+	export let selectedLang;
 </script>
 
 <div id="staff">
@@ -17,6 +20,15 @@
 				on:input
 			/>
 		</div>
+		<section class="menu-cont">
+			<select class="menu" name="menu" id="menu" bind:value={selectedLang}>
+				<option disabled selected value="">Select a language.</option>
+				<option value="all">All languages</option>
+				{#each languages as language}
+					<option value={language}>{language}</option>
+				{/each}
+			</select>
+		</section>
 	</span>
 	<img id="staff_dir" alt="Magnifying Glass" src={staff_dir} />
 </div>

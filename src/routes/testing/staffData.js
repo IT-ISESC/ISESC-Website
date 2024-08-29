@@ -6,6 +6,7 @@
 // },
 
 export const staffData = [
+	// TODO Academic Affairs
 	{
 		nickname: 'Sorn',
 		fullname: 'Suputtra Dachkun',
@@ -41,4 +42,5 @@ export const staffData = [
 		tagColor: '#84140e',
 		role: 'Academic Officer'
 	}
+	// TODO other staff ...
 ];

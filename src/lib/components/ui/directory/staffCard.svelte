@@ -4,10 +4,9 @@
 	export let nickname = '';
 	export let fullname = '';
 	export let tag = '';
+	export let tagColor = '#84140e';
 	export let role = '';
 	export let image = no_staff;
-
-	export let tagColor = '#84140e';
 </script>
 
 <div class="relative">
