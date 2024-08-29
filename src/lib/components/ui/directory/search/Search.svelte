@@ -1,12 +1,34 @@
 <script>
+	// @ts-nocheck
+
+	export let searchTerm;
 	import staff_dir from '$lib/assets/directory/staff_dir.svg';
+	// export let tags;
+	// export let selectedTag;
 </script>
 
 <div id="staff">
 	<span id="span_text">
 		<h1>Staff Directory</h1>
-		<!-- TODO Placeholder for a proper drop down menu and sorting system -->
-		<p>Find the staff according to your topic!</p>
+		<input
+			type="text"
+			id="search-field"
+			placeholder="Search for your staff!"
+			autocomplete="off"
+			bind:value={searchTerm}
+			on:input
+		/>
+
+		<!-- Dropdown menu for tags -->
+		<!-- <section class="menu-cont">
+			<select class="menu" name="menu" id="menu" bind:value={selectedTag}>
+				<option disabled selected value="">Select a tag.</option>
+				<option value="all">All tags</option>
+				{#each tags as tag}
+					<option value={tag}>{tag}</option>
+				{/each}
+			</select>
+		</section> -->
 	</span>
 	<img id="staff_dir" alt="Magnifying Glass" src={staff_dir} />
 </div>
@@ -19,7 +41,8 @@
 		gap: 20px;
 		position: relative;
 		right: 65px;
-		margin-bottom: 25px;
+		margin-top: 20px;
+		margin-bottom: 40px;
 		position: relative;
 		width: 320px;
 	}
@@ -33,7 +56,7 @@
 		height: auto;
 		position: absolute;
 		left: 170px;
-		top: -25px;
+		top: -40px;
 		z-index: -1;
 		overflow: hidden;
 	}
@@ -47,7 +70,7 @@
 		margin-bottom: 5px;
 	}
 
-	p {
+	#search-field {
 		color: white;
 		font-weight: bold;
 		font-size: 14px;
