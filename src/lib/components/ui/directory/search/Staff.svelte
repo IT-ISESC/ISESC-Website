@@ -1,13 +1,11 @@
 <script>
 	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
-
+	export let image = no_staff;
 	export let nickname = '';
 	export let fullname = '';
 	export let tag = '';
-	export let role = '';
-	export let image = no_staff;
-
 	export let tagColor = '#84140e';
+	export let role = '';
 </script>
 
 <div class="relative">
@@ -52,6 +50,7 @@
 	img {
 		position: relative;
 		width: 90px;
+		height: 110px;
 		align-self: center;
 	}
 

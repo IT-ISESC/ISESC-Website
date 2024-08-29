@@ -46,7 +46,6 @@
 	}
 
 	.event {
-		/* TODO Check variable for colours again */
 		background-color: #2b7292;
 		border-radius: 24px;
 		min-width: 248px;
