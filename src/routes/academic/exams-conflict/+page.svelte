@@ -24,7 +24,7 @@
 </button>
 
 <div class="mt-10 flex items-center justify-center">
-	<h1 class="text-3xl font-bold text-primary-blue">Late Course Adding</h1>
+	<h1 class="text-3xl font-bold text-primary-blue">Late Course Withdrawal</h1>
 </div>
 
 <div class="mt-5 flex flex-col items-center">
@@ -39,7 +39,7 @@
 		<BulletPoint text="Send the document to your advisor for approval" />
 		<BulletPoint 
 			text="Download the 2nd document and fill in accordingly"
-			subtext='2nd Document: <a href="https://drive.google.com/file/d/1-p_2Pdsvc7ufMLlh_erU0sqcOd7vdAhK/view" class="text-[#6997b6] underline hover:no-underline" target="_blank" rel="noopener noreferrer">PDF</a>' />
+			subtext='2nd Document: <a href="https://drive.google.com/file/d/1-p_2Pdsvc7ufMLlh_erU0sqcOd7vdAhK/view?usp=drive_link" class="text-[#6997b6] underline hover:no-underline" target="_blank" rel="noopener noreferrer">PDF</a>' />
 		<BulletPoint text="Send the 2nd document to the course lecturer for signature and approval" />
 		<BulletPoint text="Submit the file at the ISE Office" />
 	</div>
