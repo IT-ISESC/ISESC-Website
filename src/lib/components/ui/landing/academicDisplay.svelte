@@ -6,7 +6,8 @@
 	<div class="col-left">
 		<h2>
 			<br />
-			<span style="color: var(--secondary);">ACADEMIC</span> <br />
+			<!-- TODO Check variable for colours again -->
+			<span style="color: #2B7292;">ACADEMIC</span> <br />
 			SYSTEM!
 		</h2>
 		<br />
