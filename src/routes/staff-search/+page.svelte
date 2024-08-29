@@ -73,7 +73,6 @@
 		width: 100%;
 		max-width: 800px;
 		height: 1px;
-		/* background-color: var(--secondary-blue); */
 		border: none;
 		margin: 20px auto;
 	}
