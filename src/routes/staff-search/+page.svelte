@@ -11,6 +11,7 @@
 	import StaffCard from './Staff.svelte';
 	import Staff from './Staff.svelte';
 
+	// Get a list of tags
 	let tags = [];
 	let selectedTag = '';
 	const getTags = () => {
@@ -23,6 +24,7 @@
 	};
 	onMount(() => getTags());
 
+	// Filter by tags
 	let filteredStaff = [];
 	$: if (selectedTag) getStaffByTag();
 	const getStaffByTag = () => {
@@ -33,13 +35,27 @@
 		return (filteredStaff = staffData.filter((staff) => staff.tag === selectedTag));
 	};
 
+	// Filter by search terms
 	let searchTerm = '';
 	$: if (searchTerm) selectedTag = '';
+
 	const searchStaff = () => {
 		return (filteredStaff = staffData.filter((staff) => {
-			// TODO Find what to search by
-			let staffName = staff.fullname.toLowerCase();
-			return staffName.includes(searchTerm.toLowerCase());
+			// Get all the fields to search by
+			let keyword = staff.keywords.toLowerCase();
+			let nickname = staff.nickname.toLowerCase();
+			let fullname = staff.fullname.toLowerCase();
+			let tag = staff.tag.toLowerCase();
+			let role = staff.role.toLowerCase();
+
+			// Check if the search term matches any of the fields
+			return (
+				keyword.includes(searchTerm.toLowerCase()) ||
+				nickname.includes(searchTerm.toLowerCase()) ||
+				fullname.includes(searchTerm.toLowerCase()) ||
+				tag.includes(searchTerm.toLowerCase()) ||
+				role.includes(searchTerm.toLowerCase())
+			);
 		}));
 	};
 </script>
@@ -55,11 +71,11 @@
 		<h1>No Results</h1>
 	{:else if filteredStaff.length > 0}
 		{#each filteredStaff as { nickname, fullname, tag, tagColor, role, image }}
-			<Staff {nickname} {fullname} {tag} {role} />
+			<Staff {nickname} {fullname} {tag} {role} {tagColor} {image} />
 		{/each}
 	{:else}
 		{#each staffData as { nickname, fullname, tag, tagColor, role, image }}
-			<Staff {nickname} {fullname} {tag} {role} />
+			<Staff {nickname} {fullname} {tag} {role} {tagColor} {image} />
 		{/each}
 	{/if}
 </main>
