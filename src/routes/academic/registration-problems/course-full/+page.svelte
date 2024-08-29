@@ -28,7 +28,7 @@
 </div>
 
 <div class="mt-5 flex flex-col items-center">
-	<div class="flex w-[337px] flex-col items-start space-y-[5px]">
+	<div class="flex w-[337px] flex-col items-start space-y-[15px]">
 		<p class="mb-2 ml-1 text-[16px] font-bold text-[#2B7292]">Core Courses</p>
 
 		<!-- Bullet components -->
