@@ -28,7 +28,7 @@
 		padding-left: 36px;
 		padding-right: 36px;
 		overflow: hidden;
-		height: 256px;
+		height: auto;
 	}
 
 	section > .col-left > h2 {
@@ -76,6 +76,6 @@
 	}
 
 	section > .col-right > img {
-		max-width: min(100%, 240px);
+		max-width: min(100%, auto);
 	}
 </style>
