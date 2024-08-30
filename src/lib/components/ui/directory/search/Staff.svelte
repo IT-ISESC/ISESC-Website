@@ -68,7 +68,7 @@
 
 		color: #f6f6f3;
 		font-weight: bold;
-		font-size: 10px;
+		font-size: 9px;
 
 		border-radius: 50px;
 		background: var(--tag-background);
