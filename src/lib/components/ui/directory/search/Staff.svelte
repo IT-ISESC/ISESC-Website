@@ -1,13 +1,11 @@
 <script>
 	import no_staff from '$lib/assets/directory/staff_images/no_staff.svg';
-
-	export let nickname = 'Missing';
-	export let fullname = 'Missing';
-	export let tag = 'Missing';
-	export let role = 'Missing';
 	export let image = no_staff;
-
+	export let nickname = '';
+	export let fullname = '';
+	export let tag = '';
 	export let tagColor = '#84140e';
+	export let role = '';
 </script>
 
 <div class="relative">
@@ -52,6 +50,7 @@
 	img {
 		position: relative;
 		width: 90px;
+		height: 110px;
 		align-self: center;
 	}
 
@@ -69,7 +68,7 @@
 
 		color: #f6f6f3;
 		font-weight: bold;
-		font-size: 10px;
+		font-size: 9px;
 
 		border-radius: 50px;
 		background: var(--tag-background);

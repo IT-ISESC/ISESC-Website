@@ -112,7 +112,7 @@ The organizer will cover either accommodation or travel expenses to attend the f
         {label: 'Hackathon', props: { variant: 'hackathon'}},
       ],
       dates: [{
-        display: 'Register: now - 16 Aug 2024\nUni Track Event Agenda: 31 Aug 2024',
+        display: 'Register: now - 16 Aug 2024\nUni Track Event Agenda: 31 Aug - 1 Sep 2024',
         startDate: '2024-08-01',
         endDate: '2024-08-16',
       }, {

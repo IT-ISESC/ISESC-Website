@@ -24,7 +24,7 @@
 </button>
 
 <div class="mt-10 flex items-center justify-center">
-	<h1 class="text-3xl font-bold text-primary-blue">Late Course Adding</h1>
+	<h1 class="text-3xl font-bold text-primary-blue">S/U or V/W Registration</h1>
 </div>
 
 <div class="mt-5 flex flex-col items-center">
@@ -35,12 +35,8 @@
 			subtext='Google Form : <a href="https://docs.google.com/forms/d/e/1FAIpQLScmgKc7iH8h1iFefL-yMArThil3mtEpxR9Zhep9wYIuxPDqXg/viewform" class="text-[#6997b6] underline hover:no-underline" target="_blank" rel="noopener noreferrer">link</a>  (student email only)' />
 		<BulletPoint
 			text="The Request form to register above credits document will be filled out automatically and sent to the student's email"
-		/>
-		<BulletPoint text="Send the document to your advisor for approval" />
-		<BulletPoint 
-			text="Download the 2nd document and fill in accordingly"
-			subtext='2nd Document: <a href="https://drive.google.com/file/d/1-p_2Pdsvc7ufMLlh_erU0sqcOd7vdAhK/view" class="text-[#6997b6] underline hover:no-underline" target="_blank" rel="noopener noreferrer">PDF</a>' />
-		<BulletPoint text="Send the 2nd document to the course lecturer for signature and approval" />
+            subtext='Example : <a href="https://drive.google.com/file/d/166PqswzZ50eIqSNVpIHqv_jy1grSV4aT/view" class="text-[#6997b6] underline hover:no-underline" target="_blank" rel="noopener noreferrer">PDF</a>' />
+		<BulletPoint text="Send the document to your advisor and course lecturer for signatures" />
 		<BulletPoint text="Submit the file at the ISE Office" />
 	</div>
 </div>
