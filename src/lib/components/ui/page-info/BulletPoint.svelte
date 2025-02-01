@@ -11,9 +11,11 @@
   
   <!-- Text Info -->
   <div class="ml-2">
-    <p class="text-[14px] text-[#2B7292] font-medium">{text}</p>
+    <!-- Render text as HTML -->
+    <p class="text-[14px] text-[#2B7292] font-medium">{@html text}</p>
     {#if subtext}
-      <p class="text-[12px] text-[#6997b6] font-medium">{subtext}</p>
+      <!-- Render subtext as HTML -->
+      <p class="text-[12px] text-[#6997b6] font-medium">{@html subtext}</p>
     {/if}
   </div>
 </div>

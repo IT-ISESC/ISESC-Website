@@ -13,7 +13,7 @@
 			Directory
 		</h2>
 		<br />
-		<a href="/directory">Click Here to view</a>
+		<a href="/directory" class = 'font-medium'>Click Here to view</a>
 	</div>
 </section>
 
@@ -43,11 +43,11 @@
 	}
 
 	section > .col-right > h2 {
-		color: var(--primary);
+		color: #012d48;
 		font-size: max(24px, 4vw);
 		font-weight: bold;
 		line-height: max(25px, 4vw);
-		margin-bottom: 5px;
+		margin-bottom: -8px;
 	}
 
 	section > .col-right > a {
@@ -56,7 +56,6 @@
 		padding: 0.5rem;
 		color: #fcfcfc;
 		font-size: 12px;
-		/* TODO Check variable for colours again */
 		--bg: #2b7292;
 		background-color: var(--bg);
 		transition: background-color 0.5s;

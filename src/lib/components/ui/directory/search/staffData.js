@@ -1,9 +1,18 @@
-// {
-//     nickname: '',
-//     fullname: '',
-//     tag: '',
-//     role: ''
-// },
+import suputtra from '$lib/assets/directory/staff_images/Academic_Affairs/Suputtra.jpg';
+import Sittipun from '$lib/assets/directory/staff_images/Academic_Affairs/Sittipun.jpg';
+// import Thanaphon from '$lib/assets/directory/staff_images/Academic_Affairs/Thanaphon.jpg';
+import Punsita from '$lib/assets/directory/staff_images/Academic_Affairs/Punsita.jpg';
+import Panyata from '$lib/assets/directory/staff_images/Academic_Affairs/Panyata.jpg';
+import Sasiwipa from '$lib/assets/directory/staff_images/Administrative_Affairs/Sasiwipa.jpg';
+import Jirasaya from '$lib/assets/directory/staff_images/Administrative_Affairs/Jirasaya.jpg';
+import Sawarach from '$lib/assets/directory/staff_images/Administrative_Affairs/Sawarach.jpg';
+// import Supaphan from '$lib/assets/directory/staff_images/Administrative_Affairs/Supaphan.jpg';
+import Supatcharin from '$lib/assets/directory/staff_images/Administrative_Affairs/Supatcharin.jpg';
+import Phachphicha from '$lib/assets/directory/staff_images/Administrative_Affairs/Phachphicha.jpg';
+import Waranya from '$lib/assets/directory/staff_images/Student_Affairs_and_Public_Relations/Waranya.jpg';
+import Pamigar from '$lib/assets/directory/staff_images/Student_Affairs_and_Public_Relations/Pamigar.jpg';
+import Nattanan from '$lib/assets/directory/staff_images/International_Services/Nattanan.jpg';
+import Fonthong from '$lib/assets/directory/staff_images/International_Services/Fonthong.jpg';
 
 export const staffData = [
 	// Academic Affairs
@@ -13,7 +22,7 @@ export const staffData = [
 		tag: 'Academic Affairs',
 		tagColor: '#84140e',
 		role: 'Head of Academics',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475806_260_347.jpg',
+		image: suputtra,
 		keywords: 'head academics gened'
 	},
 	{
@@ -22,7 +31,7 @@ export const staffData = [
 		tag: 'Academic Affairs',
 		tagColor: '#84140e',
 		role: 'Registration Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475770_260_347.jpg',
+		image: Sittipun,
 		keywords: 'registration'
 	},
 	{
@@ -30,8 +39,7 @@ export const staffData = [
 		fullname: 'Thanaphon Amattayakul',
 		tag: 'Academic Affairs',
 		tagColor: '#84140e',
-		role: 'Academic Officer',
-		keywords: 'nano aero adme assistant line openchat ise student chat'
+		role: 'Academic Officer'
 	},
 	{
 		nickname: 'Poon',
@@ -39,7 +47,7 @@ export const staffData = [
 		tag: 'Academic Affairs',
 		tagColor: '#84140e',
 		role: 'Academic Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475783_260_347.jpg',
+		image: Punsita,
 		keywords: 'ice assistant outbound exchange student'
 	},
 	{
@@ -48,7 +56,7 @@ export const staffData = [
 		tag: 'Academic Affairs',
 		tagColor: '#84140e',
 		role: 'Academic Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475782_260_347.jpg',
+		image: Panyata,
 		keywords: 'ai assistant senior project approved elective reserve building 2 4 m floor'
 	},
 	// Administrative Affairs
@@ -58,7 +66,7 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Head of ISE Office & Administrative Affairs',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475766_260_347.jpg',
+		image: Sasiwipa,
 		keywords: 'head staff'
 	},
 	{
@@ -67,7 +75,7 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Finance & Accounting Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475784_260_347.jpg',
+		image: Jirasaya,
 		keywords: 'finance'
 	},
 	{
@@ -76,7 +84,7 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Finance & Accounting Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475795_260_347.jpg',
+		image: Sawarach,
 		keywords: 'finance supply budget project'
 	},
 	{
@@ -85,7 +93,6 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Head of Finance & Accounting',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475799_260_347.jpg',
 		keywords: 'head finance'
 	},
 	{
@@ -110,7 +117,7 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Human Resource Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/476255_260_347.jpg',
+		image: Supatcharin,
 		keywords: 'hr'
 	},
 	{
@@ -119,7 +126,7 @@ export const staffData = [
 		tag: 'Administrative Affairs',
 		tagColor: '#d4a314',
 		role: 'Office Administration Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475796_260_347.jpg',
+		image: Phachphicha,
 		keywords: 'fiiling clerk'
 	},
 	// International Services
@@ -129,7 +136,7 @@ export const staffData = [
 		tag: 'International Services',
 		tagColor: '#148442',
 		role: 'Accreditation Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475762_260_347.jpg',
+		image: Nattanan,
 		keywords: 'evaluation'
 	},
 	{
@@ -138,7 +145,7 @@ export const staffData = [
 		tag: 'International Services',
 		tagColor: '#148442',
 		role: 'International Service Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475772_260_347.jpg',
+		image: Fonthong,
 		keywords: 'inbound exchange student international'
 	},
 	// Student Affairs and Public Relations
@@ -148,7 +155,7 @@ export const staffData = [
 		tag: 'Student Affairs & PR',
 		tagColor: '#146a84',
 		role: 'PR & Marketing Specialist Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Bam/resize/Waran_260_347.jpg',
+		image: Waranya,
 		keywords: 'pr booth'
 	},
 	{
@@ -157,7 +164,7 @@ export const staffData = [
 		tag: 'Student Affairs & PR',
 		tagColor: '#146a84',
 		role: 'PR & Marketing Specialist Officer',
-		image: 'http://www.ise.eng.chula.ac.th/images/Staff/resize/475779_260_347.jpg',
+		image: Pamigar,
 		keywords: 'scholarship internship committee projects'
 	}
 ];
